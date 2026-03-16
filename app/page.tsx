@@ -71,7 +71,7 @@ export default function HomePage() {
 
   return (
     <div className="ke-wrap">
-      <nav className="ke-nav">
+      <nav className="ke-nav" aria-label="Primary">
         <div className="ke-logo" aria-label="KemisEMAIL">
           <svg width="200" height="44" viewBox="0 0 200 44" xmlns="http://www.w3.org/2000/svg">
             <rect x="0" y="4" width="4" height="36" fill="#0A0A0A" />
@@ -115,7 +115,13 @@ export default function HomePage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <svg className="ke-hero-geo" viewBox="0 0 1400 600" preserveAspectRatio="none" aria-hidden="true">
+        <svg
+          className="ke-hero-geo"
+          viewBox="0 0 1400 600"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+          focusable="false"
+        >
           <line x1="900" y1="0" x2="1400" y2="600" stroke="#FF4500" strokeWidth="1.5" opacity="0.12" />
           <line x1="1000" y1="0" x2="1400" y2="400" stroke="#0047FF" strokeWidth="1" opacity="0.1" />
           <line x1="1100" y1="0" x2="1400" y2="300" stroke="#6200FF" strokeWidth="1" opacity="0.1" />
@@ -139,19 +145,19 @@ export default function HomePage() {
         >
           <div className="ke-eyebrow">
             <span />
-            Bahamas #1 Email Platform
+            Bahamas Email Newsletter Platform
           </div>
           <h1 className="ke-h1">
             <span className="o">30,000</span>
             <br />
-            Bahamians.
+            Bahamians by Email.
             <br />
             <span className="b">One</span> Send.
             <br />
             <span className="p">Results</span> Friday.
           </h1>
           <p className="ke-hero-sub">
-            The largest verified email audience in The Bahamas. Real businesses. Real opens. No invoicing. Buy, send, done.
+            The largest verified email newsletter and eblast audience in The Bahamas. Real businesses. Real opens. No invoicing. Buy, send, done.
           </p>
           <motion.div
             className="ke-hero-btns"
@@ -250,7 +256,13 @@ export default function HomePage() {
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
       >
-        <svg className="ke-estimator-geo" viewBox="0 0 1400 600" preserveAspectRatio="none" aria-hidden="true">
+        <svg
+          className="ke-estimator-geo"
+          viewBox="0 0 1400 600"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+          focusable="false"
+        >
           <line x1="0" y1="0" x2="1400" y2="600" stroke="#FF4500" strokeWidth="2" />
           <line x1="200" y1="0" x2="1400" y2="500" stroke="#0047FF" strokeWidth="1" />
           <line x1="0" y1="200" x2="800" y2="600" stroke="#6200FF" strokeWidth="1" />
@@ -508,20 +520,20 @@ export default function HomePage() {
               <div className="ke-proof-stat-row">
                 <div>
                   <div className="ke-proof-stat-val" style={{ color: "#FF4500" }}>
-                    53%
+                    29%
                   </div>
                   <div className="ke-proof-stat-lbl">Open Rate</div>
                 </div>
                 <div>
                   <div className="ke-proof-stat-val" style={{ color: "#0047FF" }}>
-                    3.85%
+                    1.9%
                   </div>
                   <div className="ke-proof-stat-lbl">Click Rate</div>
                 </div>
               </div>
               <div>
                 <div className="ke-proof-stat-val" style={{ color: "#F5F4F0" }}>
-                  25K
+                  18K
                 </div>
                 <div className="ke-proof-stat-lbl">Recipients</div>
               </div>
@@ -540,20 +552,20 @@ export default function HomePage() {
               <div className="ke-proof-stat-row">
                 <div>
                   <div className="ke-proof-stat-val" style={{ color: "#FF4500" }}>
-                    48%
+                    31%
                   </div>
                   <div className="ke-proof-stat-lbl">Open Rate</div>
                 </div>
                 <div>
                   <div className="ke-proof-stat-val" style={{ color: "#0047FF" }}>
-                    4.24%
+                    2.1%
                   </div>
                   <div className="ke-proof-stat-lbl">Click Rate</div>
                 </div>
               </div>
               <div>
                 <div className="ke-proof-stat-val" style={{ color: "#F5F4F0" }}>
-                  25K
+                  22K
                 </div>
                 <div className="ke-proof-stat-lbl">Recipients</div>
               </div>
@@ -572,20 +584,20 @@ export default function HomePage() {
               <div className="ke-proof-stat-row">
                 <div>
                   <div className="ke-proof-stat-val" style={{ color: "#FF4500" }}>
-                    51%
+                    28%
                   </div>
                   <div className="ke-proof-stat-lbl">Open Rate</div>
                 </div>
                 <div>
                   <div className="ke-proof-stat-val" style={{ color: "#0047FF" }}>
-                    2.76%
+                    1.4%
                   </div>
                   <div className="ke-proof-stat-lbl">Click Rate</div>
                 </div>
               </div>
               <div>
                 <div className="ke-proof-stat-val" style={{ color: "#F5F4F0" }}>
-                  20K
+                  16K
                 </div>
                 <div className="ke-proof-stat-lbl">Recipients</div>
               </div>
@@ -604,20 +616,20 @@ export default function HomePage() {
               <div className="ke-proof-stat-row">
                 <div>
                   <div className="ke-proof-stat-val" style={{ color: "#FF4500" }}>
-                    55%
+                    32%
                   </div>
                   <div className="ke-proof-stat-lbl">Open Rate</div>
                 </div>
                 <div>
                   <div className="ke-proof-stat-val" style={{ color: "#6200FF" }}>
-                    1.29%
+                    1.3%
                   </div>
                   <div className="ke-proof-stat-lbl">Click Rate</div>
                 </div>
               </div>
               <div>
                 <div className="ke-proof-stat-val" style={{ color: "#F5F4F0" }}>
-                  18K
+                  14K
                 </div>
                 <div className="ke-proof-stat-lbl">Recipients</div>
               </div>
@@ -696,7 +708,13 @@ export default function HomePage() {
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
       >
-        <svg className="ke-cta-geo" viewBox="0 0 1400 400" preserveAspectRatio="none" aria-hidden="true">
+        <svg
+          className="ke-cta-geo"
+          viewBox="0 0 1400 400"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+          focusable="false"
+        >
           <line x1="0" y1="0" x2="1400" y2="400" stroke="#fff" strokeWidth="2" />
           <line x1="200" y1="0" x2="1400" y2="300" stroke="#FF4500" strokeWidth="1.5" />
           <line x1="0" y1="300" x2="800" y2="400" stroke="#fff" strokeWidth="1" />
@@ -726,7 +744,7 @@ export default function HomePage() {
         </motion.div>
       </motion.section>
 
-      <footer className="ke-footer">
+      <footer className="ke-footer" aria-label="Site footer">
         <div className="ke-footer-logo">
           <svg
             width="200"
