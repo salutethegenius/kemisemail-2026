@@ -14,19 +14,19 @@ const reachData: Record<LocationKey, Record<IndustryKey, number>> = {
 };
 
 const openRates: Record<IndustryKey, string> = {
-  retail: "52%",
-  food: "55%",
-  health: "51%",
-  events: "58%",
-  professional: "47%",
+  retail: "27%",
+  food: "33%",
+  health: "31%",
+  events: "35%",
+  professional: "24%",
 };
 
 const clickRates: Record<IndustryKey, string> = {
-  retail: "3.8%",
-  food: "4.5%",
-  health: "3.2%",
-  events: "5.1%",
-  professional: "2.9%",
+  retail: "1.2%",
+  food: "1.8%",
+  health: "1.6%",
+  events: "2.0%",
+  professional: "1.0%",
 };
 
 const locLabels: Record<LocationKey, string> = {
@@ -410,7 +410,14 @@ export default function HomePage() {
               <li className="ke-price-feature">Basic delivery metrics</li>
               <li className="ke-price-feature">Perfect for flash sales, announcements</li>
             </ul>
-            <button className="ke-price-buy">Buy Now — $65 →</button>
+            <a
+              className="ke-price-buy"
+              href="https://buy.stripe.com/fZufZgfzMgpla6vbFJdZ60w"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Buy Now — $65 →
+            </a>
             <div className="ke-price-tag">Instant checkout via Stripe</div>
           </motion.div>
           <motion.div
@@ -432,7 +439,14 @@ export default function HomePage() {
               <li className="ke-price-feature">Performance analytics report</li>
               <li className="ke-price-feature">Best for shops, events, schools</li>
             </ul>
-            <button className="ke-price-buy">Buy Now — $147 →</button>
+            <a
+              className="ke-price-buy"
+              href="https://buy.stripe.com/aFa28qcnAdd93I739ddZ60x"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Buy Now — $147 →
+            </a>
             <div className="ke-price-tag">Instant checkout via Stripe</div>
           </motion.div>
           <motion.div
@@ -453,7 +467,14 @@ export default function HomePage() {
               <li className="ke-price-feature">Dedicated account manager</li>
               <li className="ke-price-feature">Monthly strategy session</li>
             </ul>
-            <button className="ke-price-buy">Buy Now — $249 →</button>
+            <a
+              className="ke-price-buy"
+              href="https://buy.stripe.com/aFa7sKafsa0X0vVfVZdZ60y"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Buy Now — $249 →
+            </a>
             <div className="ke-price-tag">Instant checkout via Stripe</div>
           </motion.div>
         </div>
