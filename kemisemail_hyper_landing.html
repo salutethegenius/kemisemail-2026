@@ -1,0 +1,481 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=DM+Sans:wght@400;500;600&display=swap');
+
+*{box-sizing:border-box;margin:0;padding:0}
+.ke-wrap{font-family:'DM Sans',sans-serif;background:#F5F4F0;color:#0A0A0A;overflow-x:hidden}
+.ke-nav{display:flex;align-items:center;justify-content:space-between;padding:18px 40px;border-bottom:1.5px solid #0A0A0A;background:#F5F4F0;position:sticky;top:0;z-index:100}
+.ke-logo{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:22px;letter-spacing:-0.5px;color:#0A0A0A}
+.ke-logo span{color:#FF4500}
+.ke-nav-links{display:flex;gap:28px;list-style:none}
+.ke-nav-links a{font-size:13px;font-weight:500;color:#0A0A0A;text-decoration:none;letter-spacing:0.5px;text-transform:uppercase}
+.ke-nav-cta{background:#0A0A0A;color:#F5F4F0;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;letter-spacing:1px;text-transform:uppercase;padding:10px 22px;border:none;cursor:pointer}
+
+.ke-hero{position:relative;padding:80px 40px 70px;min-height:580px;display:flex;align-items:center;overflow:hidden;border-bottom:1.5px solid #0A0A0A}
+.ke-hero-geo{position:absolute;inset:0;pointer-events:none}
+.ke-hero-content{position:relative;z-index:2;max-width:720px}
+.ke-eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#6200FF;border:1.5px solid #6200FF;padding:5px 12px;margin-bottom:24px}
+.ke-eyebrow span{width:6px;height:6px;background:#6200FF;display:inline-block}
+.ke-h1{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(58px,8vw,96px);line-height:0.92;letter-spacing:-2px;text-transform:uppercase;color:#0A0A0A;margin-bottom:8px}
+.ke-h1 .o{color:#FF4500}
+.ke-h1 .b{color:#0047FF}
+.ke-h1 .p{color:#6200FF}
+.ke-hero-sub{font-size:16px;color:#444;line-height:1.6;max-width:480px;margin:20px 0 36px;font-weight:400}
+.ke-hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.ke-btn-primary{background:#FF4500;color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;letter-spacing:1.5px;text-transform:uppercase;padding:14px 32px;border:2px solid #FF4500;cursor:pointer}
+.ke-btn-secondary{background:transparent;color:#0A0A0A;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;letter-spacing:1.5px;text-transform:uppercase;padding:14px 32px;border:2px solid #0A0A0A;cursor:pointer}
+.ke-hero-badge{position:absolute;right:40px;top:50%;transform:translateY(-50%);text-align:center;z-index:2}
+.ke-hero-badge-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:88px;line-height:1;color:#0047FF}
+.ke-hero-badge-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#0047FF;border-top:2px solid #0047FF;padding-top:8px;margin-top:4px}
+
+.ke-ticker{background:#0A0A0A;color:#F5F4F0;padding:14px 0;overflow:hidden;border-bottom:1.5px solid #0A0A0A}
+.ke-ticker-inner{display:flex;gap:60px;animation:tickerScroll 20s linear infinite;white-space:nowrap}
+.ke-ticker-item{display:flex;align-items:center;gap:10px;font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+.ke-ticker-dot{width:8px;height:8px;background:#FF4500;flex-shrink:0}
+.ke-ticker-dot.b{background:#0047FF}
+.ke-ticker-dot.p{background:#6200FF}
+@keyframes tickerScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+.ke-section{padding:80px 40px}
+.ke-section-label{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#888;margin-bottom:12px}
+.ke-section-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(38px,5vw,60px);line-height:0.95;letter-spacing:-1px;text-transform:uppercase;margin-bottom:40px}
+
+.ke-estimator{background:#0A0A0A;padding:80px 40px;position:relative;overflow:hidden}
+.ke-estimator-geo{position:absolute;inset:0;pointer-events:none;opacity:0.15}
+.ke-est-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;max-width:1100px;margin:0 auto}
+.ke-est-left .ke-section-label{color:#FF4500}
+.ke-est-left .ke-section-title{color:#F5F4F0}
+.ke-est-left p{color:#aaa;font-size:15px;line-height:1.7}
+.ke-control-group{margin-bottom:28px}
+.ke-control-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#888;margin-bottom:10px;display:block}
+.ke-chips{display:flex;flex-wrap:wrap;gap:8px}
+.ke-chip{background:transparent;color:#aaa;border:1.5px solid #333;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;padding:7px 16px;cursor:pointer;transition:all 0.15s}
+.ke-chip:hover{border-color:#FF4500;color:#FF4500}
+.ke-chip.active{background:#FF4500;border-color:#FF4500;color:#fff}
+.ke-chip.active.b{background:#0047FF;border-color:#0047FF}
+.ke-chip.active.p{background:#6200FF;border-color:#6200FF}
+.ke-est-right{display:flex;flex-direction:column;gap:0}
+.ke-reach-display{border:1.5px solid #333;padding:32px;margin-bottom:20px}
+.ke-reach-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#888;margin-bottom:8px}
+.ke-reach-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:72px;line-height:1;color:#FF4500;transition:color 0.3s}
+.ke-reach-sub{font-size:13px;color:#666;margin-top:6px}
+.ke-metrics-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px}
+.ke-metric-card{background:#111;border:1px solid #222;padding:20px}
+.ke-metric-val{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:36px;color:#F5F4F0;line-height:1}
+.ke-metric-val.b{color:#0047FF}
+.ke-metric-val.p{color:#6200FF}
+.ke-metric-val.o{color:#FF4500}
+.ke-metric-lbl{font-size:11px;color:#666;font-weight:500;letter-spacing:1px;text-transform:uppercase;margin-top:4px}
+.ke-est-cta{background:#FF4500;color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:2px;text-transform:uppercase;padding:18px 32px;border:none;cursor:pointer;width:100%;text-align:center}
+
+.ke-pricing{padding:80px 40px;border-top:1.5px solid #0A0A0A}
+.ke-pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#0A0A0A;border:1.5px solid #0A0A0A;margin-top:40px}
+.ke-price-card{background:#F5F4F0;padding:36px 32px;position:relative;display:flex;flex-direction:column}
+.ke-price-card.featured{background:#0047FF}
+.ke-price-card.featured .ke-price-name,.ke-price-card.featured .ke-price-amount,.ke-price-card.featured .ke-price-desc,.ke-price-card.featured .ke-price-feature{color:#F5F4F0}
+.ke-price-card.featured .ke-price-period{color:rgba(245,244,240,0.6)}
+.ke-price-card.featured .ke-price-divider{border-color:rgba(255,255,255,0.2)}
+.ke-price-card.featured .ke-price-buy{background:#FF4500;color:#fff;border-color:#FF4500}
+.ke-price-badge{position:absolute;top:-1px;right:24px;background:#FF4500;color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:4px 12px}
+.ke-price-name{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;letter-spacing:1px;text-transform:uppercase;margin-bottom:20px}
+.ke-price-amount{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:64px;line-height:1;letter-spacing:-2px}
+.ke-price-period{font-size:13px;color:#888;font-weight:500;margin-bottom:8px}
+.ke-price-desc{font-size:14px;color:#555;line-height:1.5;margin-bottom:24px}
+.ke-price-divider{border:none;border-top:1px solid #ddd;margin-bottom:24px}
+.ke-price-features{list-style:none;margin-bottom:32px;flex:1}
+.ke-price-feature{font-size:14px;color:#333;padding:6px 0;display:flex;align-items:flex-start;gap:10px;line-height:1.4}
+.ke-price-feature::before{content:'';width:6px;height:6px;background:#FF4500;flex-shrink:0;margin-top:5px}
+.ke-price-card.featured .ke-price-feature::before{background:#fff}
+.ke-price-buy{background:#0A0A0A;color:#F5F4F0;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:15px;letter-spacing:2px;text-transform:uppercase;padding:14px 24px;border:2px solid #0A0A0A;cursor:pointer;width:100%}
+.ke-price-tag{font-size:12px;margin-top:10px;color:#888;text-align:center}
+.ke-price-card.featured .ke-price-tag{color:rgba(245,244,240,0.6)}
+
+.ke-proof{padding:80px 40px;background:#0A0A0A;border-top:1.5px solid #0A0A0A}
+.ke-proof .ke-section-label{color:#FF4500}
+.ke-proof .ke-section-title{color:#F5F4F0}
+.ke-proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:#333;border:1.5px solid #333}
+.ke-proof-card{background:#111;padding:28px}
+.ke-proof-brand{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;letter-spacing:0.5px;text-transform:uppercase;color:#F5F4F0;margin-bottom:6px}
+.ke-proof-cat{font-size:11px;color:#666;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:20px}
+.ke-proof-stats{display:flex;flex-direction:column;gap:12px}
+.ke-proof-stat-row{display:flex;justify-content:space-between;align-items:baseline}
+.ke-proof-stat-val{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:28px;line-height:1}
+.ke-proof-stat-lbl{font-size:10px;color:#666;letter-spacing:1px;text-transform:uppercase}
+
+.ke-process{padding:80px 40px;border-top:1.5px solid #0A0A0A}
+.ke-process-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:40px;background:#0A0A0A;border:1.5px solid #0A0A0A}
+.ke-step{background:#F5F4F0;padding:36px 32px}
+.ke-step-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:72px;line-height:1;margin-bottom:20px}
+.ke-step-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:12px}
+.ke-step-desc{font-size:14px;color:#555;line-height:1.6}
+
+.ke-cta{padding:80px 40px;background:#6200FF;position:relative;overflow:hidden;text-align:center;border-top:1.5px solid #0A0A0A}
+.ke-cta-geo{position:absolute;inset:0;pointer-events:none;opacity:0.2}
+.ke-cta h2{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(48px,6vw,80px);letter-spacing:-1.5px;text-transform:uppercase;color:#F5F4F0;line-height:0.95;margin-bottom:24px;position:relative;z-index:2}
+.ke-cta h2 span{color:#FF4500}
+.ke-cta p{font-size:16px;color:rgba(245,244,240,0.7);margin-bottom:36px;position:relative;z-index:2}
+.ke-cta-btns{display:flex;justify-content:center;gap:14px;position:relative;z-index:2}
+.ke-btn-white{background:#F5F4F0;color:#0A0A0A;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;letter-spacing:2px;text-transform:uppercase;padding:16px 36px;border:2px solid #F5F4F0;cursor:pointer}
+.ke-btn-outline-white{background:transparent;color:#F5F4F0;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;letter-spacing:2px;text-transform:uppercase;padding:16px 36px;border:2px solid #F5F4F0;cursor:pointer}
+
+.ke-footer{background:#0A0A0A;color:#F5F4F0;padding:40px;display:flex;justify-content:space-between;align-items:center;border-top:1.5px solid #333}
+.ke-footer-logo{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px}
+.ke-footer-logo span{color:#FF4500}
+.ke-footer-note{font-size:12px;color:#666}
+.ke-footer-links{display:flex;gap:24px}
+.ke-footer-links a{font-size:12px;color:#666;text-decoration:none;letter-spacing:1px;text-transform:uppercase}
+
+@media(max-width:768px){
+  .ke-nav{padding:14px 20px}.ke-nav-links{display:none}
+  .ke-hero{padding:50px 20px}.ke-hero-badge{display:none}
+  .ke-section{padding:50px 20px}
+  .ke-est-inner{grid-template-columns:1fr}
+  .ke-estimator{padding:50px 20px}
+  .ke-pricing-grid{grid-template-columns:1fr}
+  .ke-proof-grid{grid-template-columns:1fr 1fr}
+  .ke-process-steps{grid-template-columns:1fr}
+  .ke-cta{padding:60px 20px}
+  .ke-footer{flex-direction:column;gap:20px;text-align:center;padding:30px 20px}
+}
+</style>
+
+<div class="ke-wrap">
+
+<nav class="ke-nav">
+  <div class="ke-logo">Kemis<span>EMAIL</span></div>
+  <ul class="ke-nav-links">
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Pricing</a></li>
+    <li><a href="#">Campaigns</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+  <button class="ke-nav-cta">Buy Now →</button>
+</nav>
+
+<section class="ke-hero">
+  <svg class="ke-hero-geo" viewBox="0 0 1400 600" preserveAspectRatio="none">
+    <line x1="900" y1="0" x2="1400" y2="600" stroke="#FF4500" stroke-width="1.5" opacity="0.12"/>
+    <line x1="1000" y1="0" x2="1400" y2="400" stroke="#0047FF" stroke-width="1" opacity="0.1"/>
+    <line x1="1100" y1="0" x2="1400" y2="300" stroke="#6200FF" stroke-width="1" opacity="0.1"/>
+    <rect x="800" y="40" width="60" height="60" fill="none" stroke="#FF4500" stroke-width="1.5" opacity="0.2"/>
+    <rect x="1200" y="200" width="40" height="40" fill="#0047FF" opacity="0.08"/>
+    <circle cx="1300" cy="100" r="80" fill="none" stroke="#6200FF" stroke-width="1.5" opacity="0.12"/>
+    <circle cx="1350" cy="450" r="120" fill="none" stroke="#FF4500" stroke-width="1" opacity="0.08"/>
+    <line x1="0" y1="500" x2="400" y2="600" stroke="#0A0A0A" stroke-width="0.5" opacity="0.15"/>
+    <rect x="50" y="400" width="8" height="8" fill="#FF4500" opacity="0.4"/>
+    <rect x="100" y="420" width="8" height="8" fill="#0047FF" opacity="0.3"/>
+    <rect x="150" y="440" width="8" height="8" fill="#6200FF" opacity="0.3"/>
+    <polygon points="1100,480 1140,560 1060,560" fill="#FF4500" opacity="0.06"/>
+    <polygon points="850,100 890,60 890,140" fill="#0047FF" opacity="0.08"/>
+  </svg>
+
+  <div class="ke-hero-content">
+    <div class="ke-eyebrow"><span></span>Bahamas #1 Email Platform</div>
+    <h1 class="ke-h1">
+      <span class="o">30,000</span><br>
+      Bahamians.<br>
+      <span class="b">One</span> Send.<br>
+      <span class="p">Results</span> Friday.
+    </h1>
+    <p class="ke-hero-sub">The largest verified email audience in The Bahamas. Real businesses. Real opens. No invoicing. Buy, send, done.</p>
+    <div class="ke-hero-btns">
+      <button class="ke-btn-primary" onclick="document.getElementById('ke-pricing-section').scrollIntoView({behavior:'smooth'})">Get Started — From $65</button>
+      <button class="ke-btn-secondary" onclick="document.getElementById('ke-estimator-section').scrollIntoView({behavior:'smooth'})">See Your Reach →</button>
+    </div>
+  </div>
+
+  <div class="ke-hero-badge">
+    <div class="ke-hero-badge-num">70K+</div>
+    <div class="ke-hero-badge-label">Verified<br>Subscribers</div>
+  </div>
+</section>
+
+<div class="ke-ticker">
+  <div class="ke-ticker-inner" id="ticker">
+    <div class="ke-ticker-item"><span class="ke-ticker-dot"></span>53% Avg Open Rate</div>
+    <div class="ke-ticker-item"><span class="ke-ticker-dot b"></span>Nassau · Freeport · Family Islands</div>
+    <div class="ke-ticker-item"><span class="ke-ticker-dot p"></span>20+ Years Trusted Service</div>
+    <div class="ke-ticker-item"><span class="ke-ticker-dot"></span>KFC · Stacker King · Anthony's · DIB</div>
+    <div class="ke-ticker-item"><span class="ke-ticker-dot b"></span>Results in 48 Hours</div>
+    <div class="ke-ticker-item"><span class="ke-ticker-dot p"></span>Zero Invoice Friction</div>
+    <div class="ke-ticker-item"><span class="ke-ticker-dot"></span>53% Avg Open Rate</div>
+    <div class="ke-ticker-item"><span class="ke-ticker-dot b"></span>Nassau · Freeport · Family Islands</div>
+    <div class="ke-ticker-item"><span class="ke-ticker-dot p"></span>20+ Years Trusted Service</div>
+    <div class="ke-ticker-item"><span class="ke-ticker-dot"></span>KFC · Stacker King · Anthony's · DIB</div>
+    <div class="ke-ticker-item"><span class="ke-ticker-dot b"></span>Results in 48 Hours</div>
+    <div class="ke-ticker-item"><span class="ke-ticker-dot p"></span>Zero Invoice Friction</div>
+  </div>
+</div>
+
+<section class="ke-estimator" id="ke-estimator-section">
+  <svg class="ke-estimator-geo" viewBox="0 0 1400 600" preserveAspectRatio="none">
+    <line x1="0" y1="0" x2="1400" y2="600" stroke="#FF4500" stroke-width="2"/>
+    <line x1="200" y1="0" x2="1400" y2="500" stroke="#0047FF" stroke-width="1"/>
+    <line x1="0" y1="200" x2="800" y2="600" stroke="#6200FF" stroke-width="1"/>
+    <circle cx="700" cy="300" r="200" fill="none" stroke="#FF4500" stroke-width="2"/>
+    <circle cx="700" cy="300" r="300" fill="none" stroke="#0047FF" stroke-width="1"/>
+  </svg>
+  <div class="ke-est-inner">
+    <div class="ke-est-left">
+      <div class="ke-section-label">Reach Estimator</div>
+      <h2 class="ke-section-title">See Your<br>Audience<br>Before You Buy</h2>
+      <p>Pick your targets. See real numbers from real campaigns — not guesses.</p>
+      <br>
+      <div class="ke-control-group">
+        <span class="ke-control-label">Location</span>
+        <div class="ke-chips" id="loc-chips">
+          <button class="ke-chip active" data-loc="nassau" onclick="updateChip(this,'loc-chips');calcReach()">Nassau</button>
+          <button class="ke-chip b" data-loc="freeport" onclick="updateChip(this,'loc-chips');calcReach()">Freeport</button>
+          <button class="ke-chip p" data-loc="family" onclick="updateChip(this,'loc-chips');calcReach()">Family Islands</button>
+          <button class="ke-chip" data-loc="all" onclick="updateChip(this,'loc-chips');calcReach()">All Bahamas</button>
+        </div>
+      </div>
+      <div class="ke-control-group">
+        <span class="ke-control-label">Industry</span>
+        <div class="ke-chips" id="ind-chips">
+          <button class="ke-chip active" data-ind="retail" onclick="updateChip(this,'ind-chips');calcReach()">Retail</button>
+          <button class="ke-chip" data-ind="food" onclick="updateChip(this,'ind-chips');calcReach()">Food & Dining</button>
+          <button class="ke-chip p" data-ind="health" onclick="updateChip(this,'ind-chips');calcReach()">Health & Beauty</button>
+          <button class="ke-chip b" data-ind="events" onclick="updateChip(this,'ind-chips');calcReach()">Events</button>
+          <button class="ke-chip" data-ind="professional" onclick="updateChip(this,'ind-chips');calcReach()">Professional</button>
+        </div>
+      </div>
+    </div>
+    <div class="ke-est-right">
+      <div class="ke-reach-display">
+        <div class="ke-reach-label">Estimated Reach</div>
+        <div class="ke-reach-num" id="reach-num">18,400</div>
+        <div class="ke-reach-sub" id="reach-sub">Nassau retail subscribers · verified & active</div>
+      </div>
+      <div class="ke-metrics-grid">
+        <div class="ke-metric-card">
+          <div class="ke-metric-val o" id="open-rate">53%</div>
+          <div class="ke-metric-lbl">Avg Open Rate</div>
+        </div>
+        <div class="ke-metric-card">
+          <div class="ke-metric-val b" id="click-rate">4.2%</div>
+          <div class="ke-metric-lbl">Avg Click Rate</div>
+        </div>
+        <div class="ke-metric-card">
+          <div class="ke-metric-val p" id="est-opens">9,752</div>
+          <div class="ke-metric-lbl">Est. Opens</div>
+        </div>
+        <div class="ke-metric-card">
+          <div class="ke-metric-val" id="delivery">48hrs</div>
+          <div class="ke-metric-lbl">Delivery Time</div>
+        </div>
+      </div>
+      <button class="ke-est-cta" onclick="document.getElementById('ke-pricing-section').scrollIntoView({behavior:'smooth'})">Buy This Send →</button>
+    </div>
+  </div>
+</section>
+
+<section class="ke-pricing" id="ke-pricing-section">
+  <div class="ke-section-label">Pricing — No Invoice. No Wait. Just Send.</div>
+  <h2 class="ke-section-title">Pick Your<br>Package.</h2>
+  <div class="ke-pricing-grid">
+    <div class="ke-price-card">
+      <div class="ke-price-name">Single Eblast</div>
+      <div class="ke-price-amount">$65</div>
+      <div class="ke-price-period">per blast</div>
+      <div class="ke-price-desc">You provide the artwork. We send it to thousands.</div>
+      <hr class="ke-price-divider">
+      <ul class="ke-price-features">
+        <li class="ke-price-feature">You supply artwork & copy</li>
+        <li class="ke-price-feature">Wide reach to subscriber base</li>
+        <li class="ke-price-feature">Basic delivery metrics</li>
+        <li class="ke-price-feature">Perfect for flash sales, announcements</li>
+      </ul>
+      <button class="ke-price-buy">Buy Now — $65 →</button>
+      <div class="ke-price-tag">Instant checkout via Stripe</div>
+    </div>
+    <div class="ke-price-card featured">
+      <div class="ke-price-badge">Best Value</div>
+      <div class="ke-price-name">Full Newsletter</div>
+      <div class="ke-price-amount">$147</div>
+      <div class="ke-price-period">per campaign</div>
+      <div class="ke-price-desc">Custom design, branded send, full tracking.</div>
+      <hr class="ke-price-divider">
+      <ul class="ke-price-features">
+        <li class="ke-price-feature">Custom branded newsletter design</li>
+        <li class="ke-price-feature">Lead collection & tracking</li>
+        <li class="ke-price-feature">Performance analytics report</li>
+        <li class="ke-price-feature">Best for shops, events, schools</li>
+      </ul>
+      <button class="ke-price-buy">Buy Now — $147 →</button>
+      <div class="ke-price-tag">Instant checkout via Stripe</div>
+    </div>
+    <div class="ke-price-card">
+      <div class="ke-price-name">Double Send</div>
+      <div class="ke-price-amount">$267</div>
+      <div class="ke-price-period">2 campaigns / save $27</div>
+      <div class="ke-price-desc">Two sends, two moments to convert your audience.</div>
+      <hr class="ke-price-divider">
+      <ul class="ke-price-features">
+        <li class="ke-price-feature">Two custom branded campaigns</li>
+        <li class="ke-price-feature">Enhanced lead tracking</li>
+        <li class="ke-price-feature">Comparative analytics</li>
+        <li class="ke-price-feature">Best for launches, holiday campaigns</li>
+      </ul>
+      <button class="ke-price-buy">Buy Now — $267 →</button>
+      <div class="ke-price-tag">Instant checkout via Stripe</div>
+    </div>
+  </div>
+</section>
+
+<section class="ke-proof">
+  <div class="ke-section-label">Recent Campaigns</div>
+  <h2 class="ke-section-title" style="color:#F5F4F0">Real Numbers.<br>Real Clients.</h2>
+  <div class="ke-proof-grid">
+    <div class="ke-proof-card">
+      <div class="ke-proof-brand">Anthony's</div>
+      <div class="ke-proof-cat">Food & Catering</div>
+      <div class="ke-proof-stats">
+        <div class="ke-proof-stat-row">
+          <div>
+            <div class="ke-proof-stat-val" style="color:#FF4500">53%</div>
+            <div class="ke-proof-stat-lbl">Open Rate</div>
+          </div>
+          <div>
+            <div class="ke-proof-stat-val" style="color:#0047FF">3.85%</div>
+            <div class="ke-proof-stat-lbl">Click Rate</div>
+          </div>
+        </div>
+        <div><div class="ke-proof-stat-val" style="color:#F5F4F0">25K</div><div class="ke-proof-stat-lbl">Recipients</div></div>
+      </div>
+    </div>
+    <div class="ke-proof-card">
+      <div class="ke-proof-brand">DIB Events</div>
+      <div class="ke-proof-cat">Entertainment</div>
+      <div class="ke-proof-stats">
+        <div class="ke-proof-stat-row">
+          <div>
+            <div class="ke-proof-stat-val" style="color:#FF4500">48%</div>
+            <div class="ke-proof-stat-lbl">Open Rate</div>
+          </div>
+          <div>
+            <div class="ke-proof-stat-val" style="color:#0047FF">4.24%</div>
+            <div class="ke-proof-stat-lbl">Click Rate</div>
+          </div>
+        </div>
+        <div><div class="ke-proof-stat-val" style="color:#F5F4F0">25K</div><div class="ke-proof-stat-lbl">Recipients</div></div>
+      </div>
+    </div>
+    <div class="ke-proof-card">
+      <div class="ke-proof-brand">Stacker King</div>
+      <div class="ke-proof-cat">Restaurant</div>
+      <div class="ke-proof-stats">
+        <div class="ke-proof-stat-row">
+          <div>
+            <div class="ke-proof-stat-val" style="color:#FF4500">51%</div>
+            <div class="ke-proof-stat-lbl">Open Rate</div>
+          </div>
+          <div>
+            <div class="ke-proof-stat-val" style="color:#0047FF">2.76%</div>
+            <div class="ke-proof-stat-lbl">Click Rate</div>
+          </div>
+        </div>
+        <div><div class="ke-proof-stat-val" style="color:#F5F4F0">20K</div><div class="ke-proof-stat-lbl">Recipients</div></div>
+      </div>
+    </div>
+    <div class="ke-proof-card">
+      <div class="ke-proof-brand">Beauty Career</div>
+      <div class="ke-proof-cat">Professional / Health</div>
+      <div class="ke-proof-stats">
+        <div class="ke-proof-stat-row">
+          <div>
+            <div class="ke-proof-stat-val" style="color:#FF4500">55%</div>
+            <div class="ke-proof-stat-lbl">Open Rate</div>
+          </div>
+          <div>
+            <div class="ke-proof-stat-val" style="color:#6200FF">1.29%</div>
+            <div class="ke-proof-stat-lbl">Click Rate</div>
+          </div>
+        </div>
+        <div><div class="ke-proof-stat-val" style="color:#F5F4F0">18K</div><div class="ke-proof-stat-lbl">Recipients</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ke-process">
+  <div class="ke-section-label">How It Works</div>
+  <h2 class="ke-section-title">Live in<br>3 Steps.</h2>
+  <div class="ke-process-steps">
+    <div class="ke-step">
+      <div class="ke-step-num" style="color:#FF4500">01</div>
+      <div class="ke-step-title">Buy Instantly</div>
+      <p class="ke-step-desc">Choose your package. Pay via Stripe in under 60 seconds. No invoice. No waiting for approval. Done.</p>
+    </div>
+    <div class="ke-step">
+      <div class="ke-step-num" style="color:#0047FF">02</div>
+      <div class="ke-step-title">Brief Your Send</div>
+      <p class="ke-step-desc">Submit your artwork and message, or let our team build your campaign. We handle everything.</p>
+    </div>
+    <div class="ke-step">
+      <div class="ke-step-num" style="color:#6200FF">03</div>
+      <div class="ke-step-title">Results in 48hrs</div>
+      <p class="ke-step-desc">Your campaign hits 30,000+ inboxes. You get a live analytics report showing opens, clicks, and reach.</p>
+    </div>
+  </div>
+</section>
+
+<section class="ke-cta">
+  <svg class="ke-cta-geo" viewBox="0 0 1400 400" preserveAspectRatio="none">
+    <line x1="0" y1="0" x2="1400" y2="400" stroke="#fff" stroke-width="2"/>
+    <line x1="200" y1="0" x2="1400" y2="300" stroke="#FF4500" stroke-width="1.5"/>
+    <line x1="0" y1="300" x2="800" y2="400" stroke="#fff" stroke-width="1"/>
+    <circle cx="200" cy="200" r="150" fill="none" stroke="#FF4500" stroke-width="2"/>
+    <circle cx="1200" cy="100" r="100" fill="none" stroke="#fff" stroke-width="1.5"/>
+    <rect x="600" y="50" width="50" height="50" fill="none" stroke="#FF4500" stroke-width="1.5"/>
+  </svg>
+  <h2>Ready to Reach<br><span>The Bahamas?</span></h2>
+  <p>Join hundreds of local and international businesses already growing with KemisEMAIL.</p>
+  <div class="ke-cta-btns">
+    <button class="ke-btn-white" onclick="document.getElementById('ke-pricing-section').scrollIntoView({behavior:'smooth'})">Start From $65 →</button>
+    <button class="ke-btn-outline-white">View All Packages</button>
+  </div>
+</section>
+
+<footer class="ke-footer">
+  <div class="ke-footer-logo">Kemis<span>EMAIL</span></div>
+  <div class="ke-footer-note">A licensed subsidiary of Kemis Ltd., The Bahamas. © 2026 KemisEMAIL.</div>
+  <div class="ke-footer-links">
+    <a href="#">Privacy</a>
+    <a href="#">Contact</a>
+    <a href="#">KemisDigital</a>
+  </div>
+</footer>
+
+</div>
+
+<script>
+const reachData={
+  nassau:{retail:18400,food:22000,health:14000,events:26000,professional:12000},
+  freeport:{retail:6200,food:7800,health:5000,events:9000,professional:4200},
+  family:{retail:3800,food:4200,health:2800,events:5500,professional:2200},
+  all:{retail:28400,food:34000,health:21800,events:40500,professional:18400}
+};
+const openRates={retail:'52%',food:'55%',health:'51%',events:'58%',professional:'47%'};
+const clickRates={retail:'3.8%',food:'4.5%',health:'3.2%',events:'5.1%',professional:'2.9%'};
+const locLabels={nassau:'Nassau',freeport:'Freeport',family:'Family Islands',all:'All Bahamas'};
+const indLabels={retail:'retail',food:'food & dining',health:'health & beauty',events:'events',professional:'professional services'};
+let curLoc='nassau',curInd='retail';
+function updateChip(el,groupId){
+  const chips=document.querySelectorAll('#'+groupId+' .ke-chip');
+  chips.forEach(c=>{c.classList.remove('active')});
+  el.classList.add('active');
+  if(groupId==='loc-chips')curLoc=el.dataset.loc;
+  else curInd=el.dataset.ind;
+}
+function calcReach(){
+  const reach=reachData[curLoc][curInd];
+  const or=parseFloat(openRates[curInd])/100;
+  const opens=Math.round(reach*or);
+  document.getElementById('reach-num').textContent=reach.toLocaleString();
+  document.getElementById('reach-sub').textContent=locLabels[curLoc]+' '+indLabels[curInd]+' subscribers · verified & active';
+  document.getElementById('open-rate').textContent=openRates[curInd];
+  document.getElementById('click-rate').textContent=clickRates[curInd];
+  document.getElementById('est-opens').textContent=opens.toLocaleString();
+}
+</script>

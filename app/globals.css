@@ -1,0 +1,897 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=DM+Sans:wght@400;500;600&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.ke-wrap {
+  font-family: "DM Sans", sans-serif;
+  background: #f5f4f0;
+  color: #0a0a0a;
+  overflow-x: hidden;
+}
+
+.ke-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 40px;
+  border-bottom: 1.5px solid #0a0a0a;
+  background: #f5f4f0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.ke-logo {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 900;
+  font-size: 22px;
+  letter-spacing: -0.5px;
+  color: #0a0a0a;
+}
+
+.ke-logo span {
+  color: #ff4500;
+}
+
+.ke-nav-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+
+.ke-nav-links a {
+  font-size: 13px;
+  font-weight: 500;
+  color: #0a0a0a;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.ke-nav-cta {
+  background: #0a0a0a;
+  color: #f5f4f0;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 10px 22px;
+  border: none;
+  cursor: pointer;
+}
+
+.ke-hero {
+  position: relative;
+  padding: 80px 40px 70px;
+  min-height: 580px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-bottom: 1.5px solid #0a0a0a;
+}
+
+.ke-hero-geo {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.ke-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+}
+
+.ke-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #6200ff;
+  border: 1.5px solid #6200ff;
+  padding: 5px 12px;
+  margin-bottom: 24px;
+}
+
+.ke-eyebrow span {
+  width: 6px;
+  height: 6px;
+  background: #6200ff;
+  display: inline-block;
+}
+
+.ke-h1 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 900;
+  font-size: clamp(58px, 8vw, 96px);
+  line-height: 0.92;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+  color: #0a0a0a;
+  margin-bottom: 8px;
+}
+
+.ke-h1 .o {
+  color: #ff4500;
+}
+
+.ke-h1 .b {
+  color: #0047ff;
+}
+
+.ke-h1 .p {
+  color: #6200ff;
+}
+
+.ke-hero-sub {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.6;
+  max-width: 480px;
+  margin: 20px 0 36px;
+  font-weight: 400;
+}
+
+.ke-hero-btns {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.ke-btn-primary {
+  background: #ff4500;
+  color: #fff;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 14px 32px;
+  border: 2px solid #ff4500;
+  cursor: pointer;
+}
+
+.ke-btn-secondary {
+  background: transparent;
+  color: #0a0a0a;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 14px 32px;
+  border: 2px solid #0a0a0a;
+  cursor: pointer;
+}
+
+.ke-hero-badge {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  z-index: 2;
+}
+
+.ke-hero-badge-num {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 900;
+  font-size: 88px;
+  line-height: 1;
+  color: #0047ff;
+}
+
+.ke-hero-badge-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #0047ff;
+  border-top: 2px solid #0047ff;
+  padding-top: 8px;
+  margin-top: 4px;
+}
+
+.ke-ticker {
+  background: #0a0a0a;
+  color: #f5f4f0;
+  padding: 14px 0;
+  overflow: hidden;
+  border-bottom: 1.5px solid #0a0a0a;
+}
+
+.ke-ticker-inner {
+  display: flex;
+  gap: 60px;
+  animation: tickerScroll 20s linear infinite;
+  white-space: nowrap;
+}
+
+.ke-ticker-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.ke-ticker-dot {
+  width: 8px;
+  height: 8px;
+  background: #ff4500;
+  flex-shrink: 0;
+}
+
+.ke-ticker-dot.b {
+  background: #0047ff;
+}
+
+.ke-ticker-dot.p {
+  background: #6200ff;
+}
+
+@keyframes tickerScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.ke-section {
+  padding: 80px 40px;
+}
+
+.ke-section-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 12px;
+}
+
+.ke-section-title {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 900;
+  font-size: clamp(38px, 5vw, 60px);
+  line-height: 0.95;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+.ke-estimator {
+  background: #0a0a0a;
+  padding: 80px 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ke-estimator-geo {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.15;
+}
+
+.ke-est-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.ke-est-left .ke-section-label {
+  color: #ff4500;
+}
+
+.ke-est-left .ke-section-title {
+  color: #f5f4f0;
+}
+
+.ke-est-left p {
+  color: #aaa;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.ke-control-group {
+  margin-bottom: 28px;
+}
+
+.ke-control-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.ke-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ke-chip {
+  background: transparent;
+  color: #aaa;
+  border: 1.5px solid #333;
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 7px 16px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.ke-chip:hover {
+  border-color: #ff4500;
+  color: #ff4500;
+}
+
+.ke-chip.active {
+  background: #ff4500;
+  border-color: #ff4500;
+  color: #fff;
+}
+
+.ke-chip.active.b {
+  background: #0047ff;
+  border-color: #0047ff;
+}
+
+.ke-chip.active.p {
+  background: #6200ff;
+  border-color: #6200ff;
+}
+
+.ke-est-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.ke-reach-display {
+  border: 1.5px solid #333;
+  padding: 32px;
+  margin-bottom: 20px;
+}
+
+.ke-reach-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.ke-reach-num {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 900;
+  font-size: 72px;
+  line-height: 1;
+  color: #ff4500;
+  transition: color 0.3s;
+}
+
+.ke-reach-sub {
+  font-size: 13px;
+  color: #666;
+  margin-top: 6px;
+}
+
+.ke-metrics-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.ke-metric-card {
+  background: #111;
+  border: 1px solid #222;
+  padding: 20px;
+}
+
+.ke-metric-val {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-size: 36px;
+  color: #f5f4f0;
+  line-height: 1;
+}
+
+.ke-metric-val.b {
+  color: #0047ff;
+}
+
+.ke-metric-val.p {
+  color: #6200ff;
+}
+
+.ke-metric-val.o {
+  color: #ff4500;
+}
+
+.ke-metric-lbl {
+  font-size: 11px;
+  color: #666;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+.ke-est-cta {
+  background: #ff4500;
+  color: #fff;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 18px 32px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+}
+
+.ke-pricing {
+  padding: 80px 40px;
+  border-top: 1.5px solid #0a0a0a;
+}
+
+.ke-pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: #0a0a0a;
+  border: 1.5px solid #0a0a0a;
+  margin-top: 40px;
+}
+
+.ke-price-card {
+  background: #f5f4f0;
+  padding: 36px 32px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.ke-price-card.featured {
+  background: #0047ff;
+}
+
+.ke-price-card.featured .ke-price-name,
+.ke-price-card.featured .ke-price-amount,
+.ke-price-card.featured .ke-price-desc,
+.ke-price-card.featured .ke-price-feature {
+  color: #f5f4f0;
+}
+
+.ke-price-card.featured .ke-price-period {
+  color: rgba(245, 244, 240, 0.6);
+}
+
+.ke-price-card.featured .ke-price-divider {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.ke-price-card.featured .ke-price-buy {
+  background: #ff4500;
+  color: #fff;
+  border-color: #ff4500;
+}
+
+.ke-price-badge {
+  position: absolute;
+  top: -1px;
+  right: 24px;
+  background: #ff4500;
+  color: #fff;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+}
+
+.ke-price-name {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.ke-price-amount {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 900;
+  font-size: 64px;
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.ke-price-period {
+  font-size: 13px;
+  color: #888;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.ke-price-desc {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.ke-price-divider {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin-bottom: 24px;
+}
+
+.ke-price-features {
+  list-style: none;
+  margin-bottom: 32px;
+  flex: 1;
+}
+
+.ke-price-feature {
+  font-size: 14px;
+  color: #333;
+  padding: 6px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.4;
+}
+
+.ke-price-feature::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: #ff4500;
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+.ke-price-card.featured .ke-price-feature::before {
+  background: #fff;
+}
+
+.ke-price-buy {
+  background: #0a0a0a;
+  color: #f5f4f0;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 14px 24px;
+  border: 2px solid #0a0a0a;
+  cursor: pointer;
+  width: 100%;
+}
+
+.ke-price-tag {
+  font-size: 12px;
+  margin-top: 10px;
+  color: #888;
+  text-align: center;
+}
+
+.ke-price-card.featured .ke-price-tag {
+  color: rgba(245, 244, 240, 0.6);
+}
+
+.ke-proof {
+  padding: 80px 40px;
+  background: #0a0a0a;
+  border-top: 1.5px solid #0a0a0a;
+}
+
+.ke-proof .ke-section-label {
+  color: #ff4500;
+}
+
+.ke-proof .ke-section-title {
+  color: #f5f4f0;
+}
+
+.ke-proof-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  background: #333;
+  border: 1.5px solid #333;
+}
+
+.ke-proof-card {
+  background: #111;
+  padding: 28px;
+}
+
+.ke-proof-brand {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #f5f4f0;
+  margin-bottom: 6px;
+}
+
+.ke-proof-cat {
+  font-size: 11px;
+  color: #666;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.ke-proof-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ke-proof-stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.ke-proof-stat-val {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 1;
+}
+
+.ke-proof-stat-lbl {
+  font-size: 10px;
+  color: #666;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.ke-process {
+  padding: 80px 40px;
+  border-top: 1.5px solid #0a0a0a;
+}
+
+.ke-process-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-top: 40px;
+  background: #0a0a0a;
+  border: 1.5px solid #0a0a0a;
+}
+
+.ke-step {
+  background: #f5f4f0;
+  padding: 36px 32px;
+}
+
+.ke-step-num {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 900;
+  font-size: 72px;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+
+.ke-step-title {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.ke-step-desc {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.ke-cta {
+  padding: 80px 40px;
+  background: #6200ff;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  border-top: 1.5px solid #0a0a0a;
+}
+
+.ke-cta-geo {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.2;
+}
+
+.ke-cta h2 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 900;
+  font-size: clamp(48px, 6vw, 80px);
+  letter-spacing: -1.5px;
+  text-transform: uppercase;
+  color: #f5f4f0;
+  line-height: 0.95;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.ke-cta h2 span {
+  color: #ff4500;
+}
+
+.ke-cta p {
+  font-size: 16px;
+  color: rgba(245, 244, 240, 0.7);
+  margin-bottom: 36px;
+  position: relative;
+  z-index: 2;
+}
+
+.ke-cta-btns {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  position: relative;
+  z-index: 2;
+}
+
+.ke-btn-white {
+  background: #f5f4f0;
+  color: #0a0a0a;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 16px 36px;
+  border: 2px solid #f5f4f0;
+  cursor: pointer;
+}
+
+.ke-btn-outline-white {
+  background: transparent;
+  color: #f5f4f0;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 16px 36px;
+  border: 2px solid #f5f4f0;
+  cursor: pointer;
+}
+
+.ke-footer {
+  background: #0a0a0a;
+  color: #f5f4f0;
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1.5px solid #333;
+}
+
+.ke-footer-logo {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 900;
+  font-size: 20px;
+}
+
+.ke-footer-logo img {
+  display: block;
+  height: 28px;
+}
+
+.ke-footer-logo span {
+  color: #ff4500;
+}
+
+.ke-footer-note {
+  font-size: 12px;
+  color: #666;
+}
+
+.ke-footer-links {
+  display: flex;
+  gap: 24px;
+}
+
+.ke-footer-links a {
+  font-size: 12px;
+  color: #666;
+  text-decoration: none;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .ke-nav {
+    padding: 14px 20px;
+  }
+
+  .ke-nav-links {
+    display: none;
+  }
+
+  .ke-hero {
+    padding: 50px 20px;
+  }
+
+  .ke-hero-badge {
+    display: none;
+  }
+
+  .ke-section {
+    padding: 50px 20px;
+  }
+
+  .ke-est-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .ke-estimator {
+    padding: 50px 20px;
+  }
+
+  .ke-pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ke-proof-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .ke-process-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .ke-cta {
+    padding: 60px 20px;
+  }
+
+  .ke-footer {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    padding: 30px 20px;
+  }
+}
+
