@@ -166,7 +166,7 @@ export default function HomePage() {
             transition={{ delay: 0.3, duration: 0.5, ease: "easeOut" }}
           >
             <button className="ke-btn-primary" onClick={() => scrollToId("ke-pricing-section")}>
-              Get Started — From $65
+              Get Started — From $19.99
             </button>
             <button className="ke-btn-secondary" onClick={() => scrollToId("ke-estimator-section")}>
               See Your Reach →
@@ -424,7 +424,7 @@ export default function HomePage() {
             </ul>
             <a
               className="ke-price-buy"
-              href="https://buy.stripe.com/fZufZgfzMgpla6vbFJdZ60w"
+              href="https://buy.stripe.com/cNi4gsaIdffN9968VNefC00"
               target="_blank"
               rel="noreferrer"
             >
@@ -440,26 +440,28 @@ export default function HomePage() {
             transition={{ delay: 0.1, duration: 0.5, ease: "easeOut" }}
           >
             <div className="ke-price-badge">Best Value</div>
-            <div className="ke-price-name">Full Newsletter</div>
-            <div className="ke-price-amount">$147</div>
-            <div className="ke-price-period">per campaign</div>
-            <div className="ke-price-desc">Custom design, branded send, full tracking.</div>
+            <div className="ke-price-name">Hot List Campaigns</div>
+            <div className="ke-price-amount">$19.99</div>
+            <div className="ke-price-period">anytime · buy as many as you need</div>
+            <div className="ke-price-desc">
+              Targeted reach at a fraction of the cost. Campaign design included.
+            </div>
             <hr className="ke-price-divider" />
             <ul className="ke-price-features">
-              <li className="ke-price-feature">Custom branded newsletter design</li>
-              <li className="ke-price-feature">Lead collection &amp; tracking</li>
-              <li className="ke-price-feature">Performance analytics report</li>
-              <li className="ke-price-feature">Best for shops, events, schools</li>
+              <li className="ke-price-feature">You provide artwork &amp; copy</li>
+              <li className="ke-price-feature">Top engaged users — 5,000 to 8,000 openers &amp; clickers</li>
+              <li className="ke-price-feature">Campaign design included</li>
+              <li className="ke-price-feature">Fraction of a full $65 broadcast to 30,000+</li>
             </ul>
             <a
               className="ke-price-buy"
-              href="https://buy.stripe.com/aFa28qcnAdd93I739ddZ60x"
+              href="https://buy.stripe.com/dRm8wIcQl4B93OM6NFefC03"
               target="_blank"
               rel="noreferrer"
             >
-              Buy Now — $147 →
+              Buy Now — $19.99 →
             </a>
-            <div className="ke-price-tag">Instant checkout via Stripe</div>
+            <div className="ke-price-tag">Instant checkout via Stripe · choose quantity at checkout</div>
           </motion.div>
           <motion.div
             className="ke-price-card"
@@ -481,7 +483,7 @@ export default function HomePage() {
             </ul>
             <a
               className="ke-price-buy"
-              href="https://buy.stripe.com/aFa7sKafsa0X0vVfVZdZ60y"
+              href="https://buy.stripe.com/9B6aEQaIdffN70Y4FxefC02"
               target="_blank"
               rel="noreferrer"
             >
@@ -736,7 +738,7 @@ export default function HomePage() {
           transition={{ delay: 0.1, duration: 0.4, ease: "easeOut" }}
         >
           <button className="ke-btn-white" onClick={() => scrollToId("ke-pricing-section")}>
-            Start From $65 →
+            Start From $19.99 →
           </button>
           <button className="ke-btn-outline-white" onClick={() => scrollToId("ke-pricing-section")}>
             View All Packages
@@ -788,7 +790,7 @@ export default function HomePage() {
         <div className="ke-footer-links">
           <a href="#">Privacy</a>
           <a href="#">Contact</a>
-          <a href="#">KemisDigital</a>
+          <a href="#">Kemis Group of Companies</a>
         </div>
       </footer>
     </div>
