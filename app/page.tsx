@@ -44,6 +44,74 @@ const indLabels: Record<IndustryKey, string> = {
   professional: "professional services",
 };
 
+const CONTACT_EMAIL = "billing@kemis.net";
+const WHATSAPP_E164 = "12424479692";
+
+const packages = [
+  {
+    id: "single_eblast",
+    name: "Single Eblast",
+    listPrice: "$65",
+    cardPrice: "$69",
+    period: "per blast",
+    desc: "You provide the artwork. We send it to thousands.",
+    features: [
+      "You supply artwork & copy",
+      "Wide reach to subscriber base",
+      "Basic delivery metrics",
+      "Perfect for flash sales, announcements",
+    ],
+    cardUrl: "https://payments.thekemisgroup.com/b/fZu6oA8A58Rp4SQ5JBefC05",
+    featured: false,
+    cardNote: "Instant card checkout via Stripe",
+  },
+  {
+    id: "hot_list",
+    name: "Hot List Campaigns",
+    listPrice: "$19.99",
+    cardPrice: "$21.99",
+    period: "anytime · buy as many as you need",
+    desc: "Targeted reach at a fraction of the cost. Campaign design included.",
+    features: [
+      "You provide artwork & copy",
+      "Top engaged users — 5,000 to 8,000 openers & clickers",
+      "Campaign design included",
+      "Fraction of a full $65 broadcast to 30,000+",
+    ],
+    cardUrl: "https://payments.thekemisgroup.com/b/8x2eV6g2x6Jh2KI6NFefC04",
+    featured: true,
+    cardNote: "Instant card checkout · choose quantity at checkout",
+  },
+  {
+    id: "monthly_4",
+    name: "Most Popular",
+    listPrice: "$249",
+    cardPrice: "$265",
+    period: "4 campaigns / month",
+    desc: "Monthly package for consistent growth.",
+    features: [
+      "Everything in Single Eblast",
+      "Priority scheduling",
+      "Dedicated account manager",
+      "Monthly strategy session",
+    ],
+    cardUrl: "https://payments.thekemisgroup.com/b/9B67sEeYt8Rp8527RJefC06",
+    featured: false,
+    cardNote: "Instant card checkout via Stripe",
+  },
+] as const;
+
+function bankTransferWhatsAppUrl(packageName: string, listPrice: string) {
+  const text = `Hi — I'd like to pay by bank transfer for ${packageName} (${listPrice}). Please send banking details.`;
+  return `https://wa.me/${WHATSAPP_E164}?text=${encodeURIComponent(text)}`;
+}
+
+function bankTransferMailtoUrl(packageName: string, listPrice: string) {
+  const subject = `Bank transfer — ${packageName}`;
+  const body = `Hi — I'd like to pay by bank transfer for ${packageName} (${listPrice}). Please send banking details.`;
+  return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
 function scrollToId(id: string) {
   if (typeof document === "undefined") return;
   const el = document.getElementById(id);
@@ -404,93 +472,58 @@ export default function HomePage() {
           Package.
         </h2>
         <div className="ke-pricing-grid">
-          <motion.div
-            className="ke-price-card"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-          >
-            <div className="ke-price-name">Single Eblast</div>
-            <div className="ke-price-amount">$65</div>
-            <div className="ke-price-period">per blast</div>
-            <div className="ke-price-desc">You provide the artwork. We send it to thousands.</div>
-            <hr className="ke-price-divider" />
-            <ul className="ke-price-features">
-              <li className="ke-price-feature">You supply artwork &amp; copy</li>
-              <li className="ke-price-feature">Wide reach to subscriber base</li>
-              <li className="ke-price-feature">Basic delivery metrics</li>
-              <li className="ke-price-feature">Perfect for flash sales, announcements</li>
-            </ul>
-            <a
-              className="ke-price-buy"
-              href="https://buy.stripe.com/cNi4gsaIdffN9968VNefC00"
-              target="_blank"
-              rel="noreferrer"
+          {packages.map((pkg, index) => (
+            <motion.div
+              key={pkg.id}
+              className={`ke-price-card${pkg.featured ? " featured" : ""}`}
+              initial={{ opacity: 0, y: 30 + index * 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ delay: index * 0.1, duration: 0.5, ease: "easeOut" }}
             >
-              Buy Now — $65 →
-            </a>
-            <div className="ke-price-tag">Instant checkout via Stripe</div>
-          </motion.div>
-          <motion.div
-            className="ke-price-card featured"
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ delay: 0.1, duration: 0.5, ease: "easeOut" }}
-          >
-            <div className="ke-price-badge">Best Value</div>
-            <div className="ke-price-name">Hot List Campaigns</div>
-            <div className="ke-price-amount">$19.99</div>
-            <div className="ke-price-period">anytime · buy as many as you need</div>
-            <div className="ke-price-desc">
-              Targeted reach at a fraction of the cost. Campaign design included.
-            </div>
-            <hr className="ke-price-divider" />
-            <ul className="ke-price-features">
-              <li className="ke-price-feature">You provide artwork &amp; copy</li>
-              <li className="ke-price-feature">Top engaged users — 5,000 to 8,000 openers &amp; clickers</li>
-              <li className="ke-price-feature">Campaign design included</li>
-              <li className="ke-price-feature">Fraction of a full $65 broadcast to 30,000+</li>
-            </ul>
-            <a
-              className="ke-price-buy"
-              href="https://buy.stripe.com/dRm8wIcQl4B93OM6NFefC03"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Buy Now — $19.99 →
-            </a>
-            <div className="ke-price-tag">Instant checkout via Stripe · choose quantity at checkout</div>
-          </motion.div>
-          <motion.div
-            className="ke-price-card"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ delay: 0.2, duration: 0.5, ease: "easeOut" }}
-          >
-            <div className="ke-price-name">Most Popular</div>
-            <div className="ke-price-amount">$249</div>
-            <div className="ke-price-period">4 campaigns / month</div>
-            <div className="ke-price-desc">Monthly package for consistent growth.</div>
-            <hr className="ke-price-divider" />
-            <ul className="ke-price-features">
-              <li className="ke-price-feature">Everything in Single Eblast</li>
-              <li className="ke-price-feature">Priority scheduling</li>
-              <li className="ke-price-feature">Dedicated account manager</li>
-              <li className="ke-price-feature">Monthly strategy session</li>
-            </ul>
-            <a
-              className="ke-price-buy"
-              href="https://buy.stripe.com/9B6aEQaIdffN70Y4FxefC02"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Buy Now — $249 →
-            </a>
-            <div className="ke-price-tag">Instant checkout via Stripe</div>
-          </motion.div>
+              {pkg.featured ? <div className="ke-price-badge">Best Value</div> : null}
+              <div className="ke-price-name">{pkg.name}</div>
+              <div className="ke-price-amount">{pkg.listPrice}</div>
+              <div className="ke-price-period">{pkg.period}</div>
+              <div className="ke-price-desc">{pkg.desc}</div>
+              <hr className="ke-price-divider" />
+              <ul className="ke-price-features">
+                {pkg.features.map((feature) => (
+                  <li key={feature} className="ke-price-feature">
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <div className="ke-price-actions">
+                <a
+                  className="ke-price-buy"
+                  href={pkg.cardUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Pay by card — {pkg.cardPrice} →
+                </a>
+                <a
+                  className="ke-price-bank"
+                  href={bankTransferWhatsAppUrl(pkg.name, pkg.listPrice)}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Bank transfer — {pkg.listPrice} · WhatsApp
+                </a>
+                <a
+                  className="ke-price-bank ke-price-bank-secondary"
+                  href={bankTransferMailtoUrl(pkg.name, pkg.listPrice)}
+                >
+                  Or email for banking details
+                </a>
+              </div>
+              <div className="ke-price-tag">
+                {pkg.cardNote}. Card price includes online processing. Bank transfer is the list
+                price.
+              </div>
+            </motion.div>
+          ))}
         </div>
       </motion.section>
 
