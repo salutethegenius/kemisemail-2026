@@ -736,6 +736,33 @@ export default function HomePage() {
       </motion.section>
 
       <motion.section
+        className="ke-kit-promo"
+        id="ke-service-kit-section"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+      >
+        <div className="ke-kit-promo-inner">
+          <div>
+            <div className="ke-section-label">Service Kit 2026</div>
+            <h2 className="ke-section-title">
+              Hot List
+              <br />
+              highlights.
+            </h2>
+            <p className="ke-kit-promo-copy">
+              See why $19.99 Hot List campaigns hit 5,000–8,000 of our most engaged buyers — then
+              download the full leave-behind PDF.
+            </p>
+          </div>
+          <a className="ke-btn-primary" href="/service-kit">
+            View Service Kit →
+          </a>
+        </div>
+      </motion.section>
+
+      <motion.section
         className="ke-cta"
         id="ke-cta-section"
         initial={{ opacity: 0, y: 40 }}
@@ -821,6 +848,7 @@ export default function HomePage() {
           A licensed subsidiary of Kemis Ltd., The Bahamas. © {new Date().getFullYear()} KemisEMAIL.
         </div>
         <div className="ke-footer-links">
+          <a href="/service-kit">Service Kit</a>
           <a href="#">Privacy</a>
           <a href="#">Contact</a>
           <a href="#">Kemis Group of Companies</a>

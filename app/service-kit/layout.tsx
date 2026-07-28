@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
-const title = "Service Kit 2026 — Hot List Highlights | KemisEMAIL";
+const title = "Service Kit 2026 | KemisEMAIL";
 const description =
-  "Download the KemisEMAIL Service Kit 2026. Hot List campaigns from $19.99 reach 5,000–8,000 of our most engaged Bahamian buyers — design included.";
+  "Download the KemisEMAIL Service Kit 2026 — the leave-behind for Bahamian businesses, featuring Hot List campaigns from $19.99 and reach to 30,000+ opted-in inboxes.";
 
 export const metadata: Metadata = {
   title,

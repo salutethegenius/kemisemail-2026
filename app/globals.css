@@ -925,7 +925,65 @@ a.ke-btn-outline-white {
   text-transform: uppercase;
 }
 
+/* ——— Homepage Service Kit promo ——— */
+.ke-kit-promo {
+  padding: 72px 40px;
+  border-bottom: 1.5px solid #0a0a0a;
+  background: #0a0a0a;
+  color: #f5f4f0;
+}
+
+.ke-kit-promo-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.ke-kit-promo .ke-section-label {
+  color: #ff4500;
+}
+
+.ke-kit-promo .ke-section-title {
+  color: #f5f4f0;
+  margin-bottom: 16px;
+}
+
+.ke-kit-promo-copy {
+  font-size: 16px;
+  line-height: 1.55;
+  color: rgba(245, 244, 240, 0.72);
+  max-width: 520px;
+}
+
+.ke-kit-promo .ke-btn-primary {
+  flex-shrink: 0;
+}
+
 /* ——— Service Kit landing ——— */
+.ke-sk-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.ke-sk-back {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #0a0a0a;
+  text-decoration: none;
+  border-bottom: 1.5px solid transparent;
+}
+
+.ke-sk-back:hover {
+  border-bottom-color: #ff4500;
+  color: #ff4500;
+}
+
 .ke-sk-hero .ke-hero-content {
   max-width: 780px;
 }
@@ -1108,6 +1166,24 @@ a.ke-btn-outline-white {
 
   .ke-cta {
     padding: 60px 20px;
+  }
+
+  .ke-kit-promo {
+    padding: 50px 20px;
+  }
+
+  .ke-kit-promo-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 28px;
+  }
+
+  .ke-sk-nav-actions {
+    gap: 12px;
+  }
+
+  .ke-sk-back {
+    font-size: 11px;
   }
 
   .ke-sk-highlights,
