@@ -944,7 +944,6 @@ a.ke-btn-outline-white {
 
 .ke-kit-promo .ke-section-label {
   color: #ff4500;
-  border-color: #ff4500;
 }
 
 .ke-kit-promo .ke-section-title {
@@ -961,9 +960,6 @@ a.ke-btn-outline-white {
 
 .ke-kit-promo .ke-btn-primary {
   flex-shrink: 0;
-  background: #ff4500;
-  border-color: #ff4500;
-  color: #f5f4f0;
 }
 
 /* ——— Service Kit landing ——— */

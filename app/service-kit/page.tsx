@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 
 const PDF_HREF = "/service-kit/KemisEmail-Service-Kit-2026.pdf";
-const HOT_LIST_URL = "https://payments.thekemisgroup.com/b/8x2eV6g2x6Jh2KI6NFefC04";
 const WHATSAPP_URL =
   "https://wa.me/12424479692?text=" +
   encodeURIComponent("Hi KemisEmail — I want to book a Hot List campaign");
@@ -34,6 +33,14 @@ const proofStats = [
 ];
 
 const brands = ["Burger King", "KFC", "Urban Nassau Rides", "Oasis", "Windermere", "Drewber"];
+
+function scrollToId(id: string) {
+  if (typeof document === "undefined") return;
+  const el = document.getElementById(id);
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth" });
+  }
+}
 
 function LogoMark({ ink = "#0A0A0A" }: { ink?: string }) {
   return (
@@ -122,13 +129,13 @@ export default function ServiceKitPage() {
             Kemis<span>EMAIL</span>
           </p>
           <h1 className="ke-h1">
-            Hot List buyers.
+            Service Kit
             <br />
-            <span className="o">$19.99</span> a send.
+            <span className="o">2026</span>
           </h1>
           <p className="ke-hero-sub">
-            Reach 5,000–8,000 of our most engaged Bahamian openers and clickers — design included.
-            Grab the 2026 Service Kit PDF.
+            The leave-behind for Bahamian businesses ready to reach 30,000+ opted-in inboxes — including
+            our Hot List of 5,000–8,000 most engaged buyers.
           </p>
           <motion.div
             className="ke-hero-btns"
@@ -139,9 +146,13 @@ export default function ServiceKitPage() {
             <a className="ke-btn-primary" href={PDF_HREF} download>
               Grab it now →
             </a>
-            <a className="ke-btn-secondary" href={HOT_LIST_URL} target="_blank" rel="noreferrer">
-              Book Hot List →
-            </a>
+            <button
+              type="button"
+              className="ke-btn-secondary"
+              onClick={() => scrollToId("hot-list-highlights")}
+            >
+              Explore →
+            </button>
           </motion.div>
         </motion.div>
       </motion.section>
