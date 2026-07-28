@@ -77,9 +77,14 @@ export default function ServiceKitPage() {
         <a className="ke-logo" href="/" aria-label="KemisEMAIL home">
           <LogoMark />
         </a>
-        <a className="ke-nav-cta" href={PDF_HREF} download>
-          Grab it now →
-        </a>
+        <div className="ke-sk-nav-actions">
+          <a className="ke-sk-back" href="/">
+            ← Back to homepage
+          </a>
+          <a className="ke-nav-cta" href={PDF_HREF} download>
+            Grab it now →
+          </a>
+        </div>
       </nav>
 
       <motion.section
