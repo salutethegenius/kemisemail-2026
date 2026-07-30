@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
+import SiteNav from "@/components/SiteNav";
 
 type LocationKey = "nassau" | "freeport" | "family" | "all";
 type IndustryKey = "retail" | "food" | "health" | "events" | "professional";
@@ -139,43 +140,7 @@ export default function HomePage() {
 
   return (
     <div className="ke-wrap">
-      <nav className="ke-nav" aria-label="Primary">
-        <div className="ke-logo" aria-label="KemisEMAIL">
-          <svg width="200" height="44" viewBox="0 0 200 44" xmlns="http://www.w3.org/2000/svg">
-            <rect x="0" y="4" width="4" height="36" fill="#0A0A0A" />
-            <polygon points="4,4 18,4 10,22 4,22" fill="#FF4500" />
-            <polygon points="4,22 10,22 22,40 6,40" fill="#0047FF" />
-            <rect x="24" y="4" width="3" height="3" fill="#6200FF" opacity="0.9" />
-            <rect x="29" y="4" width="3" height="3" fill="#FF4500" opacity="0.5" />
-            <rect x="34" y="4" width="3" height="3" fill="#0047FF" opacity="0.3" />
-            <text
-              x="42"
-              y="32"
-              fontFamily="'Barlow Condensed',sans-serif"
-              fontWeight="900"
-              fontSize="30"
-              fill="#0A0A0A"
-              letterSpacing={-0.2}
-            >
-              KEMIS
-            </text>
-            <text
-              x="134"
-              y="32"
-              fontFamily="'Barlow Condensed',sans-serif"
-              fontWeight="900"
-              fontSize="30"
-              fill="#FF4500"
-              letterSpacing={-0.2}
-            >
-              EMAIL
-            </text>
-          </svg>
-        </div>
-        <button className="ke-nav-cta" onClick={() => scrollToId("ke-pricing-section")}>
-          Buy Now →
-        </button>
-      </nav>
+      <SiteNav ctaLabel="Buy Now →" onCtaClick={() => scrollToId("ke-pricing-section")} />
 
       <motion.section
         className="ke-hero"
@@ -821,8 +786,8 @@ export default function HomePage() {
           A licensed subsidiary of Kemis Ltd., The Bahamas. © {new Date().getFullYear()} KemisEMAIL.
         </div>
         <div className="ke-footer-links">
-          <a href="#">Privacy</a>
-          <a href="#">Contact</a>
+          <a href="/sms">SMS</a>
+          <a href="/contact">Contact</a>
           <a href="#">Kemis Group of Companies</a>
         </div>
       </footer>
