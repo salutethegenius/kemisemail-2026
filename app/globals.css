@@ -57,6 +57,16 @@
   padding: 10px 22px;
   border: none;
   cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a.ke-btn-primary,
+a.ke-btn-secondary,
+a.ke-btn-white,
+a.ke-btn-outline-white {
+  text-decoration: none;
+  display: inline-block;
 }
 
 .ke-nav-burger {
@@ -1453,6 +1463,205 @@
   min-height: 65px;
 }
 
+
+/* ——— Homepage Service Kit promo ——— */
+.ke-kit-promo {
+  padding: 72px 40px;
+  border-bottom: 1.5px solid #0a0a0a;
+  background: #0a0a0a;
+  color: #f5f4f0;
+}
+
+.ke-kit-promo-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.ke-kit-promo .ke-section-label {
+  color: #ff4500;
+}
+
+.ke-kit-promo .ke-section-title {
+  color: #f5f4f0;
+  margin-bottom: 16px;
+}
+
+.ke-kit-promo-copy {
+  font-size: 16px;
+  line-height: 1.55;
+  color: rgba(245, 244, 240, 0.72);
+  max-width: 520px;
+}
+
+.ke-kit-promo .ke-btn-primary {
+  flex-shrink: 0;
+}
+
+/* ——— Service Kit landing ——— */
+.ke-sk-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.ke-sk-back {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #0a0a0a;
+  text-decoration: none;
+  border-bottom: 1.5px solid transparent;
+}
+
+.ke-sk-back:hover {
+  border-bottom-color: #ff4500;
+  color: #ff4500;
+}
+
+.ke-sk-hero .ke-hero-content {
+  max-width: 780px;
+}
+
+.ke-sk-brand {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 900;
+  font-size: clamp(42px, 7vw, 72px);
+  letter-spacing: -1.5px;
+  text-transform: uppercase;
+  line-height: 0.95;
+  color: #0a0a0a;
+  margin-bottom: 18px;
+}
+
+.ke-sk-brand span {
+  color: #ff4500;
+}
+
+.ke-sk-highlights,
+.ke-sk-proof {
+  padding: 80px 40px;
+  border-bottom: 1.5px solid #0a0a0a;
+}
+
+.ke-sk-highlight-list {
+  list-style: none;
+  margin-top: 40px;
+  max-width: 860px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ke-sk-highlight-list li {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 20px;
+  align-items: start;
+  padding: 28px 0;
+  border-top: 1.5px solid #0a0a0a;
+}
+
+.ke-sk-highlight-list li:last-child {
+  border-bottom: 1.5px solid #0a0a0a;
+}
+
+.ke-sk-highlight-index {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 900;
+  font-size: 28px;
+  font-style: italic;
+  color: #ff4500;
+  letter-spacing: -0.5px;
+  line-height: 1;
+  padding-top: 4px;
+}
+
+.ke-sk-highlight-list h3 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-size: 28px;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+  line-height: 1.05;
+  margin-bottom: 8px;
+}
+
+.ke-sk-highlight-list p {
+  font-size: 15px;
+  color: #444;
+  line-height: 1.55;
+  max-width: 560px;
+}
+
+.ke-sk-proof-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin-top: 40px;
+  border: 1.5px solid #0a0a0a;
+  max-width: 900px;
+}
+
+.ke-sk-proof-stat {
+  padding: 28px 24px;
+  border-right: 1.5px solid #0a0a0a;
+}
+
+.ke-sk-proof-stat:last-child {
+  border-right: none;
+}
+
+.ke-sk-proof-val {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: clamp(40px, 5vw, 56px);
+  color: #ff4500;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.ke-sk-proof-lbl {
+  margin-top: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #666;
+}
+
+.ke-sk-proof-note {
+  margin-top: 36px;
+  font-size: 15px;
+  color: #444;
+  max-width: 520px;
+  line-height: 1.5;
+}
+
+.ke-sk-brands {
+  margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  max-width: 720px;
+}
+
+.ke-sk-brands span {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  color: #0a0a0a;
+  border-bottom: 2px solid #ff4500;
+  padding-bottom: 2px;
+}
+
 @media (max-width: 768px) {
   .ke-nav {
     padding: 14px 20px;
@@ -1539,6 +1748,58 @@
 
   .ke-cta {
     padding: 60px 20px;
+  }
+
+  .ke-kit-promo {
+    padding: 50px 20px;
+  }
+
+  .ke-kit-promo-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 28px;
+  }
+
+  .ke-sk-nav-actions {
+    gap: 12px;
+  }
+
+  .ke-sk-back {
+    font-size: 11px;
+  }
+
+  .ke-sk-highlights,
+  .ke-sk-proof {
+    padding: 50px 20px;
+  }
+
+  .ke-sk-highlight-list li {
+    grid-template-columns: 48px 1fr;
+    gap: 14px;
+    padding: 22px 0;
+  }
+
+  .ke-sk-highlight-list h3 {
+    font-size: 22px;
+  }
+
+  .ke-sk-proof-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .ke-sk-proof-stat {
+    border-right: none;
+    border-bottom: 1.5px solid #0a0a0a;
+  }
+
+  .ke-sk-proof-stat:last-child {
+    border-bottom: none;
+  }
+
+  .ke-hero-btns,
+  .ke-cta-btns {
+    flex-direction: column;
+    align-items: stretch;
   }
 
   .ke-footer {

@@ -128,6 +128,11 @@ export default function SiteNav({ ctaLabel, onCtaClick }: SiteNavProps) {
               </Link>
             </li>
             <li>
+              <Link href="/service-kit" onClick={close}>
+                Service Kit
+              </Link>
+            </li>
+            <li>
               <Link href="/contact" onClick={close}>
                 Contact
               </Link>
