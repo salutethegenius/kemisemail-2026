@@ -40,19 +40,10 @@
   color: #ff4500;
 }
 
-.ke-nav-links {
+.ke-nav-actions {
   display: flex;
-  gap: 28px;
-  list-style: none;
-}
-
-.ke-nav-links a {
-  font-size: 13px;
-  font-weight: 500;
-  color: #0a0a0a;
-  text-decoration: none;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
+  align-items: center;
+  gap: 12px;
 }
 
 .ke-nav-cta {
@@ -76,6 +67,148 @@ a.ke-btn-white,
 a.ke-btn-outline-white {
   text-decoration: none;
   display: inline-block;
+}
+
+.ke-nav-burger {
+  width: 48px;
+  height: 48px;
+  border: 1.5px solid #0a0a0a;
+  background: #f5f4f0;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.ke-nav-burger span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #0a0a0a;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+.ke-nav-burger.is-open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.ke-nav-burger.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.ke-nav-burger.is-open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.ke-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.ke-menu.is-open {
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.ke-menu-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.45);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.ke-menu.is-open .ke-menu-backdrop {
+  opacity: 1;
+}
+
+.ke-menu-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: min(420px, 100%);
+  height: 100%;
+  background: #f5f4f0;
+  border-left: 1.5px solid #0a0a0a;
+  padding: 28px 32px 40px;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+
+.ke-menu.is-open .ke-menu-panel {
+  transform: translateX(0);
+}
+
+.ke-menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 48px;
+  padding-bottom: 18px;
+  border-bottom: 1.5px solid #0a0a0a;
+}
+
+.ke-menu-label {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.ke-menu-close {
+  background: transparent;
+  border: none;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #0a0a0a;
+  padding: 6px 0;
+}
+
+.ke-menu-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ke-menu-list a {
+  display: block;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 900;
+  font-size: clamp(42px, 8vw, 56px);
+  line-height: 1;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #0a0a0a;
+  padding: 10px 0;
+  border-bottom: 1.5px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.ke-menu-list a:hover {
+  color: #ff4500;
+  border-bottom-color: #ff4500;
+}
+
+.ke-menu-note {
+  margin-top: auto;
+  font-size: 13px;
+  color: #666;
+  letter-spacing: 0.3px;
 }
 
 .ke-hero {
@@ -925,6 +1058,412 @@ a.ke-btn-outline-white {
   text-transform: uppercase;
 }
 
+/* —— SMS / WhatsApp marketing page —— */
+
+.ke-sms-hero {
+  position: relative;
+  padding: 72px 40px 64px;
+  overflow: hidden;
+  border-bottom: 1.5px solid #0a0a0a;
+}
+
+.ke-sms-hero-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+  max-width: 1200px;
+}
+
+.ke-sms-phones {
+  display: flex;
+  gap: 18px;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.ke-sms-phone {
+  width: 200px;
+  background: #0a0a0a;
+  color: #f5f4f0;
+  border: 1.5px solid #0a0a0a;
+  padding: 18px 14px 16px;
+  position: relative;
+}
+
+.ke-sms-phone-bad {
+  transform: translateY(18px) rotate(-2deg);
+  opacity: 0.72;
+}
+
+.ke-sms-phone-good {
+  transform: rotate(1.5deg);
+  box-shadow: 12px 16px 0 #ff4500;
+}
+
+.ke-sms-phone-notch {
+  width: 64px;
+  height: 6px;
+  background: #333;
+  margin: 0 auto 18px;
+}
+
+.ke-sms-bubble {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  padding: 14px 12px;
+  min-height: 110px;
+}
+
+.ke-sms-sender {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  color: #ff4500;
+}
+
+.ke-sms-phone-bad .ke-sms-sender {
+  color: #888;
+  text-transform: none;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0;
+}
+
+.ke-sms-bubble p {
+  font-size: 13px;
+  line-height: 1.45;
+  color: #ccc;
+}
+
+.ke-sms-phone-caption {
+  margin-top: 12px;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #888;
+  text-align: center;
+}
+
+.ke-sms-phone-good .ke-sms-phone-caption {
+  color: #ff4500;
+}
+
+.ke-sms-section {
+  padding: 80px 40px;
+  border-bottom: 1.5px solid #0a0a0a;
+}
+
+.ke-sms-section .ke-process-steps {
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 40px;
+}
+
+.ke-sms-why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  margin-top: 40px;
+}
+
+.ke-sms-why-num {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 900;
+  font-size: 28px;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.ke-sms-why h3 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+
+.ke-sms-why p {
+  font-size: 14px;
+  line-height: 1.55;
+  color: #444;
+}
+
+.ke-sms-scale {
+  background: #0a0a0a;
+  color: #f5f4f0;
+  padding: 80px 40px;
+  border-bottom: 1.5px solid #0a0a0a;
+}
+
+.ke-sms-scale .ke-section-label {
+  color: #f5f4f0;
+  border-color: #666;
+}
+
+.ke-sms-scale-sub {
+  max-width: 560px;
+  margin-top: 20px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #bbb;
+}
+
+.ke-sms-scale-sub strong {
+  color: #f5f4f0;
+}
+
+.ke-sms-scale-band {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 48px;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 900;
+  font-size: clamp(36px, 6vw, 64px);
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  color: #ff4500;
+}
+
+.ke-sms-scale-line {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, #ff4500, #0047ff, #6200ff);
+  opacity: 0.85;
+}
+
+.ke-sms-rates {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 36px;
+  align-items: start;
+}
+
+.ke-sms-rate-price {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 900;
+  font-size: clamp(64px, 10vw, 96px);
+  line-height: 0.9;
+  letter-spacing: -2px;
+  color: #ff4500;
+  text-transform: uppercase;
+}
+
+.ke-sms-rate-price span {
+  font-size: 0.35em;
+  letter-spacing: 1px;
+  color: #0a0a0a;
+  margin-left: 6px;
+}
+
+.ke-sms-rate-hero p {
+  margin-top: 16px;
+  font-size: 15px;
+  color: #444;
+  max-width: 360px;
+  line-height: 1.5;
+}
+
+.ke-sms-rate-list {
+  list-style: none;
+  border-top: 1.5px solid #0a0a0a;
+}
+
+.ke-sms-rate-list li {
+  padding: 16px 0;
+  border-bottom: 1.5px solid #0a0a0a;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.ke-sms-proof {
+  padding: 80px 40px;
+  background: #f5f4f0;
+  border-bottom: 1.5px solid #0a0a0a;
+  background-image: linear-gradient(135deg, rgba(255, 69, 0, 0.06), transparent 40%),
+    linear-gradient(225deg, rgba(0, 71, 255, 0.05), transparent 35%);
+}
+
+.ke-sms-proof-lede {
+  margin-top: 18px;
+  max-width: 520px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+}
+
+.ke-sms-proof-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+  max-width: 900px;
+}
+
+.ke-sms-stat-num {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 900;
+  font-size: clamp(42px, 7vw, 72px);
+  line-height: 0.95;
+  letter-spacing: -1.5px;
+  color: #0a0a0a;
+}
+
+.ke-sms-stat-label {
+  margin-top: 8px;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #666;
+  font-weight: 600;
+}
+
+.ke-sms-quote {
+  padding: 80px 40px;
+  border-bottom: 1.5px solid #0a0a0a;
+  background: linear-gradient(180deg, #fff 0%, #f5f4f0 100%);
+}
+
+.ke-sms-quote-inner {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 48px;
+  max-width: 1100px;
+  align-items: start;
+}
+
+.ke-sms-quote-lede {
+  margin-top: 16px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #444;
+  max-width: 380px;
+}
+
+.ke-sms-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ke-sms-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #0a0a0a;
+}
+
+.ke-sms-form label span {
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0;
+  color: #888;
+  font-size: 12px;
+}
+
+.ke-sms-form label em {
+  font-style: normal;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0;
+  color: #888;
+}
+
+.ke-sms-form input,
+.ke-sms-form select,
+.ke-sms-form textarea {
+  font-family: "DM Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  padding: 12px 14px;
+  border: 1.5px solid #0a0a0a;
+  background: #fff;
+  color: #0a0a0a;
+  width: 100%;
+}
+
+.ke-sms-form input:focus,
+.ke-sms-form select:focus,
+.ke-sms-form textarea:focus {
+  outline: 2px solid #ff4500;
+  outline-offset: 1px;
+}
+
+.ke-sms-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.ke-sms-form .ke-btn-primary {
+  margin-top: 8px;
+  align-self: flex-start;
+}
+
+.ke-sms-form .ke-btn-primary:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.ke-sms-form-error {
+  font-size: 14px;
+  color: #b00020;
+  letter-spacing: 0;
+  text-transform: none;
+  font-weight: 500;
+}
+
+.ke-sms-success {
+  border: 1.5px solid #0a0a0a;
+  padding: 36px 28px;
+  background: #fff;
+}
+
+.ke-sms-success h3 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 900;
+  font-size: 32px;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+  margin-bottom: 10px;
+}
+
+.ke-sms-success p {
+  color: #444;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.ke-contact-page {
+  min-height: calc(100vh - 180px);
+  display: flex;
+  align-items: center;
+}
+
+.ke-contact-page .ke-section-title {
+  font-size: clamp(42px, 7vw, 72px);
+}
+
+.ke-turnstile {
+  margin: 4px 0 8px;
+  min-height: 65px;
+}
+
+
 /* ——— Homepage Service Kit promo ——— */
 .ke-kit-promo {
   padding: 72px 40px;
@@ -1128,8 +1667,51 @@ a.ke-btn-outline-white {
     padding: 14px 20px;
   }
 
-  .ke-nav-links {
-    display: none;
+  .ke-nav-cta {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+
+  .ke-menu-panel {
+    width: 100%;
+    border-left: none;
+  }
+
+  .ke-sms-hero {
+    padding: 48px 20px 56px;
+  }
+
+  .ke-sms-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .ke-sms-phones {
+    justify-content: center;
+  }
+
+  .ke-sms-phone {
+    width: 160px;
+  }
+
+  .ke-sms-section,
+  .ke-sms-scale,
+  .ke-sms-proof,
+  .ke-sms-quote {
+    padding: 56px 20px;
+  }
+
+  .ke-sms-why-grid,
+  .ke-sms-section .ke-process-steps,
+  .ke-sms-rates,
+  .ke-sms-quote-inner,
+  .ke-sms-proof-stats,
+  .ke-sms-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .ke-sms-scale-band {
+    gap: 10px;
   }
 
   .ke-hero {
