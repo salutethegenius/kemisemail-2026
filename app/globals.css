@@ -1464,6 +1464,31 @@ a.ke-btn-outline-white {
 }
 
 
+/* ——— Homepage SMS promo ——— */
+.ke-sms-promo {
+  padding: 72px 40px;
+  border-bottom: 1.5px solid #0a0a0a;
+  background: linear-gradient(135deg, rgba(255, 69, 0, 0.08), transparent 45%),
+    linear-gradient(225deg, rgba(0, 71, 255, 0.06), transparent 40%), #f5f4f0;
+}
+
+.ke-sms-promo-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.ke-sms-promo-copy {
+  margin-top: 16px;
+  max-width: 520px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+}
+
 /* ——— Homepage Service Kit promo ——— */
 .ke-kit-promo {
   padding: 72px 40px;
@@ -1546,6 +1571,78 @@ a.ke-btn-outline-white {
 .ke-sk-proof {
   padding: 80px 40px;
   border-bottom: 1.5px solid #0a0a0a;
+}
+
+.ke-sk-section-lede {
+  margin-top: 16px;
+  max-width: 560px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+}
+
+.ke-sk-sms {
+  padding: 80px 40px;
+  border-bottom: 1.5px solid #0a0a0a;
+  background: #0a0a0a;
+  color: #f5f4f0;
+}
+
+.ke-sk-sms .ke-section-label {
+  color: #ff4500;
+  border-color: #ff4500;
+}
+
+.ke-sk-sms .ke-section-title {
+  color: #f5f4f0;
+}
+
+.ke-sk-sms .ke-sk-section-lede {
+  color: #bbb;
+}
+
+.ke-sk-sms .ke-sk-section-lede strong {
+  color: #f5f4f0;
+}
+
+.ke-sk-highlight-list-light li {
+  border-bottom-color: #333;
+}
+
+.ke-sk-highlight-list-light h3 {
+  color: #f5f4f0;
+}
+
+.ke-sk-highlight-list-light p {
+  color: #aaa;
+}
+
+.ke-sk-highlight-list-light .ke-sk-highlight-index {
+  color: #ff4500;
+}
+
+.ke-sk-sms-cta {
+  margin-top: 36px;
+}
+
+.ke-sk-proof-block {
+  margin-top: 40px;
+}
+
+.ke-sk-proof-block-sms {
+  margin-top: 56px;
+  padding-top: 40px;
+  border-top: 1.5px solid #0a0a0a;
+}
+
+.ke-sk-proof-heading {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: #ff4500;
 }
 
 .ke-sk-highlight-list {
@@ -1754,10 +1851,15 @@ a.ke-btn-outline-white {
     padding: 50px 20px;
   }
 
-  .ke-kit-promo-inner {
+  .ke-kit-promo-inner,
+  .ke-sms-promo-inner {
     flex-direction: column;
     align-items: flex-start;
     gap: 28px;
+  }
+
+  .ke-sms-promo {
+    padding: 50px 20px;
   }
 
   .ke-sk-nav-actions {
@@ -1769,8 +1871,9 @@ a.ke-btn-outline-white {
   }
 
   .ke-sk-highlights,
-  .ke-sk-proof {
-    padding: 50px 20px;
+  .ke-sk-proof,
+  .ke-sk-sms {
+    padding: 56px 20px;
   }
 
   .ke-sk-highlight-list li {
@@ -1807,6 +1910,245 @@ a.ke-btn-outline-white {
     gap: 20px;
     text-align: center;
     padding: 30px 20px;
+  }
+}
+
+/* ——— Service Kit print leave-behind ——— */
+.ke-print {
+  font-family: "DM Sans", sans-serif;
+  background: #f5f4f0;
+  color: #0a0a0a;
+}
+
+.ke-print-page {
+  min-height: 100vh;
+  padding: 64px 56px;
+  box-sizing: border-box;
+  page-break-after: always;
+  break-after: page;
+  border-bottom: 1.5px solid #0a0a0a;
+}
+
+.ke-print-page:last-child {
+  page-break-after: auto;
+  break-after: auto;
+  border-bottom: none;
+}
+
+.ke-print-brand {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 900;
+  font-size: 28px;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+
+.ke-print-brand span {
+  color: #ff4500;
+}
+
+.ke-print-cover h1,
+.ke-print-page h2 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 900;
+  font-size: clamp(56px, 9vw, 88px);
+  line-height: 0.92;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.ke-print-cover h1 span,
+.ke-print-page h2 span {
+  color: #ff4500;
+}
+
+.ke-print-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #6200ff;
+  border: 1.5px solid #6200ff;
+  display: inline-block;
+  padding: 5px 12px;
+  margin-bottom: 20px;
+}
+
+.ke-print-lede {
+  max-width: 560px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 36px;
+}
+
+.ke-print-meta {
+  display: grid;
+  gap: 18px;
+  max-width: 560px;
+  margin-top: 40px;
+}
+
+.ke-print-meta div {
+  border-top: 1.5px solid #0a0a0a;
+  padding-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ke-print-meta strong {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.ke-print-meta span {
+  font-size: 14px;
+  color: #555;
+}
+
+.ke-print-url {
+  margin-top: 64px;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #ff4500;
+}
+
+.ke-print-list {
+  list-style: none;
+  max-width: 640px;
+  margin: 0 0 40px;
+  counter-reset: print-item;
+}
+
+.ke-print-list li {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1.5px solid #0a0a0a;
+  counter-increment: print-item;
+}
+
+.ke-print-list li::before {
+  content: counter(print-item, decimal-leading-zero);
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 900;
+  font-size: 22px;
+  color: #ff4500;
+}
+
+.ke-print-list strong {
+  display: block;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin-bottom: 4px;
+}
+
+.ke-print-list span {
+  display: block;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #555;
+}
+
+.ke-print-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  max-width: 720px;
+  margin-bottom: 28px;
+}
+
+.ke-print-stat-val {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 900;
+  font-size: 48px;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.ke-print-stat-lbl {
+  margin-top: 8px;
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #666;
+  font-weight: 600;
+}
+
+.ke-print-brands {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+}
+
+.ke-print-brands span {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+  font-size: 16px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #ff4500;
+  padding-bottom: 2px;
+}
+
+.ke-print-note {
+  max-width: 520px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #555;
+}
+
+.ke-print-contact-list {
+  list-style: none;
+  max-width: 560px;
+  margin: 0 0 48px;
+}
+
+.ke-print-contact-list li {
+  padding: 16px 0;
+  border-bottom: 1.5px solid #0a0a0a;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ke-print-contact-list strong {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #ff4500;
+}
+
+.ke-print-footer {
+  font-size: 12px;
+  color: #666;
+}
+
+@media print {
+  .ke-print-page {
+    min-height: auto;
+    height: 100vh;
+    padding: 48px 40px;
+    border-bottom: none;
+  }
+
+  body {
+    background: #f5f4f0;
   }
 }
 
