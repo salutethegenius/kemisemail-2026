@@ -562,6 +562,7 @@ export default function SmsPage() {
         </div>
         <div className="ke-footer-links">
           <Link href="/">Email</Link>
+          <Link href="/service-kit">Service Kit</Link>
           <Link href="/contact">Contact</Link>
         </div>
       </footer>

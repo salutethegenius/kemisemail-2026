@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 const title = "Service Kit 2026 | KemisEMAIL";
 const description =
-  "Download the KemisEMAIL Service Kit 2026 — the leave-behind for Bahamian businesses, featuring Hot List campaigns from $19.99 and reach to 30,000+ opted-in inboxes.";
+  "Download the KemisEMAIL Service Kit 2026 — email Hot List campaigns from $19.99 and Bahamas SMS & WhatsApp advertising from ~$0.10/send for 10,000+ numbers.";
 
 export const metadata: Metadata = {
   title,
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: "/og-kemisemail.png",
         width: 1200,
         height: 630,
-        alt: "KemisEMAIL — Bahamas Email Newsletter & Eblast Platform",
+        alt: "KemisEMAIL Service Kit 2026 — Email & SMS Advertising",
       },
     ],
   },

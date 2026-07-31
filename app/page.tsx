@@ -701,6 +701,33 @@ export default function HomePage() {
       </motion.section>
 
       <motion.section
+        className="ke-sms-promo"
+        id="ke-sms-promo-section"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+      >
+        <div className="ke-sms-promo-inner">
+          <div>
+            <div className="ke-section-label">SMS & WhatsApp</div>
+            <h2 className="ke-section-title">
+              Your brand
+              <br />
+              on their phone.
+            </h2>
+            <p className="ke-sms-promo-copy">
+              Bahamas enterprise messaging with branded sender names — from 10,000 to 1M+ numbers,
+              starting ~$0.10/send. Proven on 20,256 NHI deliveries at 100%.
+            </p>
+          </div>
+          <a className="ke-btn-primary" href="/sms">
+            Explore SMS →
+          </a>
+        </div>
+      </motion.section>
+
+      <motion.section
         className="ke-kit-promo"
         id="ke-service-kit-section"
         initial={{ opacity: 0, y: 40 }}
@@ -712,13 +739,13 @@ export default function HomePage() {
           <div>
             <div className="ke-section-label">Service Kit 2026</div>
             <h2 className="ke-section-title">
-              Hot List
+              Email + SMS
               <br />
-              highlights.
+              leave-behind.
             </h2>
             <p className="ke-kit-promo-copy">
-              See why $19.99 Hot List campaigns hit 5,000–8,000 of our most engaged buyers — then
-              download the full leave-behind PDF.
+              Hot List email from $19.99 and Bahamas SMS & WhatsApp from ~$0.10/send — download the full
+              Service Kit PDF for your team.
             </p>
           </div>
           <a className="ke-btn-primary" href="/service-kit">
