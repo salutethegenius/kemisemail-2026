@@ -7,7 +7,7 @@ import SiteNav from "@/components/SiteNav";
 const PDF_HREF = "/service-kit/KemisEmail-Service-Kit-2026.pdf";
 const WHATSAPP_URL =
   "https://wa.me/12424479692?text=" +
-  encodeURIComponent("Hi KemisEmail — I want to talk about email or SMS campaigns");
+  encodeURIComponent("Hi KemisEmail — I want to book a Hot List campaign");
 
 const emailHighlights = [
   {
@@ -129,8 +129,12 @@ export default function ServiceKitPage() {
           <line x1="1000" y1="0" x2="1400" y2="400" stroke="#0047FF" strokeWidth="1" opacity="0.1" />
           <line x1="1100" y1="0" x2="1400" y2="300" stroke="#6200FF" strokeWidth="1" opacity="0.1" />
           <rect x="800" y="40" width="60" height="60" fill="none" stroke="#FF4500" strokeWidth="1.5" opacity="0.2" />
+          <rect x="1200" y="200" width="40" height="40" fill="#0047FF" opacity="0.08" />
           <circle cx="1300" cy="100" r="80" fill="none" stroke="#6200FF" strokeWidth="1.5" opacity="0.12" />
+          <circle cx="1350" cy="450" r="120" fill="none" stroke="#FF4500" strokeWidth="1" opacity="0.08" />
+          <line x1="0" y1="500" x2="400" y2="600" stroke="#0A0A0A" strokeWidth="0.5" opacity="0.15" />
           <polygon points="1100,480 1140,560 1060,560" fill="#FF4500" opacity="0.06" />
+          <polygon points="850,100 890,60 890,140" fill="#0047FF" opacity="0.08" />
         </svg>
 
         <motion.div
@@ -148,8 +152,8 @@ export default function ServiceKitPage() {
             <span className="o">2026</span>
           </h1>
           <p className="ke-hero-sub">
-            The leave-behind for Bahamian businesses — email to 30,000+ opted-in inboxes, plus enterprise
-            SMS & WhatsApp with branded sender names from 10,000 numbers.
+            The leave-behind for Bahamian businesses ready to reach 30,000+ opted-in inboxes — including
+            our Hot List of 5,000–8,000 most engaged buyers.
           </p>
           <motion.div
             className="ke-hero-btns"
@@ -160,7 +164,11 @@ export default function ServiceKitPage() {
             <a className="ke-btn-primary" href={PDF_HREF} download>
               Grab it now →
             </a>
-            <button type="button" className="ke-btn-secondary" onClick={() => scrollToId("email-highlights")}>
+            <button
+              type="button"
+              className="ke-btn-secondary"
+              onClick={() => scrollToId("hot-list-highlights")}
+            >
               Explore →
             </button>
           </motion.div>
@@ -169,30 +177,26 @@ export default function ServiceKitPage() {
 
       <motion.section
         className="ke-sk-highlights"
-        id="email-highlights"
+        id="hot-list-highlights"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.25 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
       >
-        <div className="ke-section-label">Email · Hot List</div>
+        <div className="ke-section-label">Hot List Highlights</div>
         <h2 className="ke-section-title">
-          Inbox
+          What&apos;s in
           <br />
-          campaigns.
+          the kit.
         </h2>
-        <p className="ke-sk-section-lede">
-          Hot List $19.99 · Standard eblast $65 · Monthly 4-pack $249 — reach 30,000+ verified Bahamian
-          inboxes.
-        </p>
         <ul className="ke-sk-highlight-list">
           {emailHighlights.map((item, index) => (
             <motion.li
               key={item.title}
               initial={{ opacity: 0, x: -16 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ delay: index * 0.06, duration: 0.4, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.6 }}
+              transition={{ delay: index * 0.08, duration: 0.45, ease: "easeOut" }}
             >
               <span className="ke-sk-highlight-index">{String(index + 1).padStart(2, "0")}</span>
               <div>
@@ -257,7 +261,7 @@ export default function ServiceKitPage() {
         <h2 className="ke-section-title">
           Proof that
           <br />
-          lands.
+          opens.
         </h2>
 
         <div className="ke-sk-proof-block">
@@ -320,9 +324,7 @@ export default function ServiceKitPage() {
           <br />
           <span>Service Kit</span>
         </h2>
-        <p>
-          PDF leave-behind for 2026 — Email Hot List from $19.99 · SMS from ~$0.10/send · 10K+ minimum.
-        </p>
+        <p>PDF leave-behind for 2026 — Hot List $19.99 · Standard $65 · Monthly $249.</p>
         <motion.div
           className="ke-cta-btns"
           initial={{ opacity: 0, y: 20 }}
@@ -334,7 +336,7 @@ export default function ServiceKitPage() {
             Grab it now →
           </a>
           <a className="ke-btn-outline-white" href={WHATSAPP_URL} target="_blank" rel="noreferrer">
-            WhatsApp us
+            WhatsApp to book
           </a>
           <Link className="ke-btn-outline-white" href="/sms">
             SMS quote →
