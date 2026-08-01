@@ -739,13 +739,13 @@ export default function HomePage() {
           <div>
             <div className="ke-section-label">Service Kit 2026</div>
             <h2 className="ke-section-title">
-              Email + SMS
+              Hot List
               <br />
-              leave-behind.
+              highlights.
             </h2>
             <p className="ke-kit-promo-copy">
-              Hot List email from $19.99 and Bahamas SMS & WhatsApp from ~$0.10/send — download the full
-              Service Kit PDF for your team.
+              See why $19.99 Hot List campaigns hit 5,000–8,000 of our most engaged buyers — then
+              download the full leave-behind PDF.
             </p>
           </div>
           <a className="ke-btn-primary" href="/service-kit">
