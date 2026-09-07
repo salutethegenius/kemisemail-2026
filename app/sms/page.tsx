@@ -4,6 +4,7 @@ import { FormEvent, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import SiteNav from "@/components/SiteNav";
+import SiteFooter from "@/components/SiteFooter";
 import TurnstileWidget from "@/components/TurnstileWidget";
 
 type FormState = {
@@ -30,47 +31,6 @@ function scrollToId(id: string) {
   if (typeof document === "undefined") return;
   const el = document.getElementById(id);
   if (el) el.scrollIntoView({ behavior: "smooth" });
-}
-
-function FooterLogo() {
-  return (
-    <svg
-      width="200"
-      height="44"
-      viewBox="0 0 200 44"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-label="KemisEMAIL"
-    >
-      <rect x="0" y="4" width="4" height="36" fill="#F5F4F0" />
-      <polygon points="4,4 18,4 10,22 4,22" fill="#FF4500" />
-      <polygon points="4,22 10,22 22,40 6,40" fill="#0047FF" />
-      <rect x="24" y="4" width="3" height="3" fill="#6200FF" opacity="0.9" />
-      <rect x="29" y="4" width="3" height="3" fill="#FF4500" opacity="0.5" />
-      <rect x="34" y="4" width="3" height="3" fill="#0047FF" opacity="0.3" />
-      <text
-        x="42"
-        y="32"
-        fontFamily="'Barlow Condensed',sans-serif"
-        fontWeight="900"
-        fontSize="30"
-        fill="#F5F4F0"
-        letterSpacing={-0.2}
-      >
-        KEMIS
-      </text>
-      <text
-        x="134"
-        y="32"
-        fontFamily="'Barlow Condensed',sans-serif"
-        fontWeight="900"
-        fontSize="30"
-        fill="#FF4500"
-        letterSpacing={-0.2}
-      >
-        EMAIL
-      </text>
-    </svg>
-  );
 }
 
 export default function SmsPage() {
@@ -155,7 +115,7 @@ export default function SmsPage() {
           >
             <div className="ke-eyebrow">
               <span />
-              Bahamas · SMS & WhatsApp Advertising
+              Higher-impact companion to email
             </div>
             <h1 className="ke-h1">
               Your Brand.
@@ -167,16 +127,16 @@ export default function SmsPage() {
               <span className="p">Delivered.</span>
             </h1>
             <p className="ke-hero-sub">
-              Enterprise SMS and WhatsApp campaigns for The Bahamas. Recipients see{" "}
+              Pair branded SMS with an email campaign for a higher-impact push. Recipients see{" "}
               <strong>YOUR COMPANY</strong> — not a random number. Minimum 10,000. We handle the send.
             </p>
             <div className="ke-hero-btns">
               <button className="ke-btn-primary" onClick={() => scrollToId("ke-sms-quote")}>
                 Request a Quote
               </button>
-              <button className="ke-btn-secondary" onClick={() => scrollToId("ke-sms-proof")}>
-                See NHI Results →
-              </button>
+              <a className="ke-btn-secondary" href="/#ke-pricing-section">
+                Pair with an Email Campaign →
+              </a>
             </div>
           </motion.div>
 
@@ -229,6 +189,30 @@ export default function SmsPage() {
           <div className="ke-ticker-item">
             <span className="ke-ticker-dot" />
             From ~$0.10 / send
+          </div>
+          <div className="ke-ticker-item">
+            <span className="ke-ticker-dot b" />
+            Pair with an Email Campaign
+          </div>
+          <div className="ke-ticker-item">
+            <span className="ke-ticker-dot" />
+            Branded sender name
+          </div>
+          <div className="ke-ticker-item">
+            <span className="ke-ticker-dot b" />
+            SMS · WhatsApp
+          </div>
+          <div className="ke-ticker-item">
+            <span className="ke-ticker-dot p" />
+            10,000 to 1M+ Bahamas numbers
+          </div>
+          <div className="ke-ticker-item">
+            <span className="ke-ticker-dot" />
+            From ~$0.10 / send
+          </div>
+          <div className="ke-ticker-item">
+            <span className="ke-ticker-dot b" />
+            Pair with an Email Campaign
           </div>
         </div>
       </motion.div>
@@ -430,7 +414,8 @@ export default function SmsPage() {
               campaign.
             </h2>
             <p className="ke-sms-quote-lede">
-              Bahamas SMS & WhatsApp only. Minimum 10,000 numbers. We’ll reply from the Kemis front desk.
+              Pair SMS with an Email Campaign or run it on its own. Minimum 10,000 numbers. We’ll reply
+              from the Kemis front desk.
             </p>
           </div>
 
@@ -551,21 +536,15 @@ export default function SmsPage() {
         </div>
       </motion.section>
 
-      <footer className="ke-footer" aria-label="Site footer">
-        <div className="ke-footer-logo">
-          <Link href="/">
-            <FooterLogo />
-          </Link>
-        </div>
-        <div className="ke-footer-note">
-          A licensed subsidiary of Kemis Ltd., The Bahamas. © {new Date().getFullYear()} KemisEMAIL.
-        </div>
-        <div className="ke-footer-links">
-          <Link href="/">Email</Link>
-          <Link href="/service-kit">Service Kit</Link>
-          <Link href="/contact">Contact</Link>
-        </div>
-      </footer>
+      <SiteFooter
+        links={
+          <>
+            <Link href="/">Email</Link>
+            <Link href="/service-kit">Service Kit</Link>
+            <Link href="/contact">Contact</Link>
+          </>
+        }
+      />
     </div>
   );
 }

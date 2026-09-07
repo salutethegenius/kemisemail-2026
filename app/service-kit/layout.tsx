@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
-const title = "Service Kit 2026 | KemisEMAIL";
+const title = "Service Kit 2026 | Kemis.email";
 const description =
-  "Download the KemisEMAIL Service Kit 2026 — email Hot List campaigns from $19.99 and Bahamas SMS & WhatsApp advertising from ~$0.10/send for 10,000+ numbers.";
+  "Reach 30K+ Bahamian consumers by email, with SMS for higher-impact campaigns. Email from $19.99, monthly plans $249.";
 
 export const metadata: Metadata = {
   title,
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: "/og-kemisemail.png",
         width: 1200,
         height: 630,
-        alt: "KemisEMAIL Service Kit 2026 — Email & SMS Advertising",
+        alt: "Kemis.email Service Kit 2026 — Email & SMS campaigns",
       },
     ],
   },

@@ -4,9 +4,9 @@ import "./globals.css";
 
 const siteUrl = new URL("https://kemis.email");
 const siteName = "KemisEMAIL";
-const siteTitle = "KemisEMAIL — Bahamas Email Newsletter Platform";
+const siteTitle = "Kemis.email — Put Your Business in Front of Bahamian Customers";
 const siteDescription =
-  "Bahamas email newsletter and eblast service reaching 30,000+ verified Bahamian inboxes.";
+  "Reach 30K+ Bahamian consumers through targeted email campaigns. SMS available for higher-impact campaigns across Nassau, Freeport and the Family Islands.";
 
 export const metadata: Metadata = {
   metadataBase: siteUrl,
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
         url: "/og-kemisemail.png",
         width: 1200,
         height: 630,
-        alt: "KemisEMAIL — Bahamas Email Newsletter & Eblast Platform",
+        alt: "Kemis.email — Put your business in front of Bahamian customers",
       },
     ],
   },

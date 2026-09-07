@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
-const title = "Contact — KemisEMAIL";
+const title = "Contact — Kemis.email";
 const description =
-  "Contact KemisEMAIL about Bahamas email advertising or SMS & WhatsApp campaigns.";
+  "Talk to Kemis.email about reaching Bahamian customers by email or Email + SMS campaigns.";
 
 export const metadata: Metadata = {
   title,
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: "/og-kemisemail.png",
         width: 1200,
         height: 630,
-        alt: "Contact KemisEMAIL",
+        alt: "Contact Kemis.email",
       },
     ],
   },

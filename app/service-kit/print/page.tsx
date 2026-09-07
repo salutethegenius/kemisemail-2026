@@ -13,63 +13,63 @@ export default function ServiceKitPrintPage() {
           <span>2026</span>
         </h1>
         <p className="ke-print-lede">
-          Email to 30,000+ opted-in Bahamian inboxes. Enterprise SMS & WhatsApp with branded sender
-          names from 10,000 numbers.
+          Reach 30K+ Bahamian consumers through targeted email campaigns. SMS available for
+          higher-impact campaigns.
         </p>
         <div className="ke-print-meta">
           <div>
-            <strong>Email</strong>
-            <span>Hot List from $19.99 · Standard $65 · Monthly $249</span>
+            <strong>Email Campaign</strong>
+            <span>$65 broad reach · Hot List $19.99 · Monthly Plan $249</span>
           </div>
           <div>
-            <strong>SMS / WhatsApp</strong>
-            <span>From ~$0.10/send · Min 10,000 · Bahamas only</span>
+            <strong>Email + SMS</strong>
+            <span>Custom quote · From ~$0.10/send · Min 10,000</span>
           </div>
         </div>
         <p className="ke-print-url">kemis.email</p>
       </section>
 
       <section className="ke-print-page">
-        <p className="ke-print-label">Email · Hot List</p>
+        <p className="ke-print-label">Email Campaign</p>
         <h2>
-          Inbox
+          Broad reach.
           <br />
-          campaigns.
+          Three ways in.
         </h2>
         <p className="ke-print-lede">
-          Reach 30,000+ verified Bahamian inboxes — or target the Hot List of 5,000–8,000 most engaged
-          buyers.
+          A standard full campaign hits the 30K+ nationwide sendable audience — or target by island
+          and industry. Hot List is the $19.99 option for 5,000–8,000 most engaged buyers.
         </p>
         <ol className="ke-print-list">
           <li>
-            <strong>5,000–8,000 engaged buyers</strong>
-            <span>Top openers and clickers — people who never miss a deal.</span>
+            <strong>30K+ nationwide reach</strong>
+            <span>Typical sendable audience for a standard full email campaign.</span>
           </li>
           <li>
-            <strong>Full campaign design included</strong>
-            <span>You provide artwork and copy. We design, build, and deploy.</span>
+            <strong>Hot List from $19.99</strong>
+            <span>5,000–8,000 most engaged openers and clickers. Campaign design included.</span>
           </li>
           <li>
-            <strong>Built for flash offers</strong>
-            <span>Weekend deals and urgency campaigns at a fraction of a full broadcast.</span>
+            <strong>Monthly Campaign Plan $249</strong>
+            <span>Four campaigns a month. Recurring customer acquisition.</span>
           </li>
           <li>
-            <strong>Higher intent, smarter spend</strong>
-            <span>Book Hot List anytime for $19.99.</span>
+            <strong>Buy, send, measure</strong>
+            <span>You provide artwork and copy. We send. You get the report.</span>
           </li>
         </ol>
         <div className="ke-print-stats">
           <div>
             <div className="ke-print-stat-val">30K+</div>
-            <div className="ke-print-stat-lbl">Opted-in subscribers</div>
+            <div className="ke-print-stat-lbl">Sendable audience</div>
           </div>
           <div>
-            <div className="ke-print-stat-val">38%</div>
-            <div className="ke-print-stat-lbl">Avg open rate</div>
+            <div className="ke-print-stat-val">25%+</div>
+            <div className="ke-print-stat-lbl">Newsletter open rate</div>
           </div>
           <div>
-            <div className="ke-print-stat-val">2×</div>
-            <div className="ke-print-stat-lbl">Industry open benchmark</div>
+            <div className="ke-print-stat-val">24–35%</div>
+            <div className="ke-print-stat-lbl">Paid campaign opens</div>
           </div>
         </div>
         <div className="ke-print-brands">
@@ -80,17 +80,21 @@ export default function ServiceKitPrintPage() {
       </section>
 
       <section className="ke-print-page">
-        <p className="ke-print-label">SMS & WhatsApp</p>
+        <p className="ke-print-label">Email + SMS</p>
         <h2>
-          Their phone.
+          Higher-impact
           <br />
-          Your brand.
+          on their phone.
         </h2>
         <p className="ke-print-lede">
-          Recipients see <strong>YOUR COMPANY</strong> — not a random number. Enterprise Bahamas
-          messaging from 10,000 to 1M+ numbers.
+          Pair branded SMS with an email campaign. Recipients see <strong>YOUR COMPANY</strong> — not
+          a random number. From 10,000 numbers.
         </p>
         <ol className="ke-print-list">
+          <li>
+            <strong>Higher-impact companion</strong>
+            <span>Inbox plus a tap on the phone. Quote-only add-on to email.</span>
+          </li>
           <li>
             <strong>Branded sender name</strong>
             <span>Instant recognition. Higher trust than unknown numbers.</span>
@@ -98,10 +102,6 @@ export default function ServiceKitPrintPage() {
           <li>
             <strong>SMS + WhatsApp</strong>
             <span>One campaign brief. We run the paced send.</span>
-          </li>
-          <li>
-            <strong>Enterprise volume</strong>
-            <span>Serviced 10,000–1M+ — not DIY self-serve blasts.</span>
           </li>
           <li>
             <strong>From ~$0.10 / send</strong>
@@ -135,8 +135,8 @@ export default function ServiceKitPrintPage() {
           talk.
         </h2>
         <p className="ke-print-lede">
-          Download this kit, then book email or request an SMS quote. We handle the send. You get the
-          report.
+          Download this kit, then buy an email campaign or request an Email + SMS quote. We handle the
+          send. You get the report.
         </p>
         <ul className="ke-print-contact-list">
           <li>
@@ -154,6 +154,7 @@ export default function ServiceKitPrintPage() {
         </ul>
         <p className="ke-print-footer">
           A licensed subsidiary of Kemis Ltd., The Bahamas. © {new Date().getFullYear()} KemisEMAIL.
+          KemisDigital builds websites. Kemis.email is audience and promotion.
         </p>
       </section>
     </div>
