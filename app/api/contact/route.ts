@@ -58,7 +58,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Please enter a valid email address." }, { status: 400 });
   }
 
-  const allowedTopics = ["Email advertising", "SMS / WhatsApp", "General"];
+  const allowedTopics = ["Email advertising", "Email + SMS", "SMS / WhatsApp", "General"];
   if (topic && !allowedTopics.includes(topic)) {
     return NextResponse.json({ error: "Invalid topic selection." }, { status: 400 });
   }

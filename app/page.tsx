@@ -2,7 +2,9 @@
 
 import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import SiteNav from "@/components/SiteNav";
+import SiteFooter from "@/components/SiteFooter";
 
 type LocationKey = "nassau" | "freeport" | "family" | "all";
 type IndustryKey = "retail" | "food" | "health" | "events" | "professional";
@@ -48,59 +50,26 @@ const indLabels: Record<IndustryKey, string> = {
 const CONTACT_EMAIL = "billing@kemis.net";
 const WHATSAPP_E164 = "12424479692";
 
-const packages = [
-  {
-    id: "single_eblast",
-    name: "Single Eblast",
-    listPrice: "$65",
-    cardPrice: "$69",
-    period: "per blast",
-    desc: "You provide the artwork. We send it to thousands.",
-    features: [
-      "You supply artwork & copy",
-      "Wide reach to subscriber base",
-      "Basic delivery metrics",
-      "Perfect for flash sales, announcements",
-    ],
-    cardUrl: "https://payments.thekemisgroup.com/b/fZu6oA8A58Rp4SQ5JBefC05",
-    featured: false,
-    cardNote: "Instant card checkout via Stripe",
-  },
-  {
-    id: "hot_list",
-    name: "Hot List Campaigns",
-    listPrice: "$19.99",
-    cardPrice: "$21.99",
-    period: "anytime · buy as many as you need",
-    desc: "Targeted reach at a fraction of the cost. Campaign design included.",
-    features: [
-      "You provide artwork & copy",
-      "Top engaged users — 5,000 to 8,000 openers & clickers",
-      "Campaign design included",
-      "Fraction of a full $65 broadcast to 30,000+",
-    ],
-    cardUrl: "https://payments.thekemisgroup.com/b/8x2eV6g2x6Jh2KI6NFefC04",
-    featured: true,
-    cardNote: "Instant card checkout · choose quantity at checkout",
-  },
-  {
-    id: "monthly_4",
-    name: "Most Popular",
-    listPrice: "$249",
-    cardPrice: "$265",
-    period: "4 campaigns / month",
-    desc: "Monthly package for consistent growth.",
-    features: [
-      "Everything in Single Eblast",
-      "Priority scheduling",
-      "Dedicated account manager",
-      "Monthly strategy session",
-    ],
-    cardUrl: "https://payments.thekemisgroup.com/b/9B67sEeYt8Rp8527RJefC06",
-    featured: false,
-    cardNote: "Instant card checkout via Stripe",
-  },
-] as const;
+const EMAIL_CAMPAIGN = {
+  name: "Email Campaign",
+  listPrice: "$65",
+  cardPrice: "$69",
+  cardUrl: "https://payments.thekemisgroup.com/b/fZu6oA8A58Rp4SQ5JBefC05",
+} as const;
+
+const HOT_LIST = {
+  name: "Hot List Campaign",
+  listPrice: "$19.99",
+  cardPrice: "$21.99",
+  cardUrl: "https://payments.thekemisgroup.com/b/8x2eV6g2x6Jh2KI6NFefC04",
+} as const;
+
+const MONTHLY_PLAN = {
+  name: "Monthly Campaign Plan",
+  listPrice: "$249",
+  cardPrice: "$265",
+  cardUrl: "https://payments.thekemisgroup.com/b/9B67sEeYt8Rp8527RJefC06",
+} as const;
 
 function bankTransferWhatsAppUrl(packageName: string, listPrice: string) {
   const text = `Hi — I'd like to pay by bank transfer for ${packageName} (${listPrice}). Please send banking details.`;
@@ -121,6 +90,39 @@ function scrollToId(id: string) {
   }
 }
 
+function BuyActions({
+  name,
+  listPrice,
+  cardPrice,
+  cardUrl,
+  cardCta,
+}: {
+  name: string;
+  listPrice: string;
+  cardPrice: string;
+  cardUrl: string;
+  cardCta?: string;
+}) {
+  return (
+    <div className="ke-price-actions">
+      <a className="ke-price-buy" href={cardUrl} target="_blank" rel="noreferrer">
+        {cardCta ?? `Pay by card — ${cardPrice} →`}
+      </a>
+      <a
+        className="ke-price-bank"
+        href={bankTransferWhatsAppUrl(name, listPrice)}
+        target="_blank"
+        rel="noreferrer"
+      >
+        Bank transfer — {listPrice} · WhatsApp
+      </a>
+      <a className="ke-price-bank ke-price-bank-secondary" href={bankTransferMailtoUrl(name, listPrice)}>
+        Or email for banking details
+      </a>
+    </div>
+  );
+}
+
 export default function HomePage() {
   const [location, setLocation] = useState<LocationKey>("nassau");
   const [industry, setIndustry] = useState<IndustryKey>("retail");
@@ -134,7 +136,7 @@ export default function HomePage() {
       openRateString: openRates[industry],
       clickRateString: clickRates[industry],
       estOpens,
-      subtitle: `${locLabels[location]} ${indLabels[industry]} subscribers · verified & active`,
+      subtitle: `${locLabels[location]} ${indLabels[industry]} · sendable audience`,
     };
   }, [location, industry]);
 
@@ -178,19 +180,21 @@ export default function HomePage() {
         >
           <div className="ke-eyebrow">
             <span />
-            Bahamas Email Newsletter Platform
+            Audience and promotion · The Bahamas
           </div>
           <h1 className="ke-h1">
-            <span className="o">30,000</span>
+            Put Your Business
             <br />
-            Bahamians by Email.
+            in Front of
             <br />
-            <span className="b">One</span> Send.
+            <span className="o">Bahamian</span>
             <br />
-            <span className="p">Results</span> Friday.
+            <span className="b">Customers.</span>
           </h1>
           <p className="ke-hero-sub">
-            The largest verified email newsletter and eblast audience in The Bahamas. Real businesses. Real opens. No invoicing. Buy, send, done.
+            Reach thousands of consumers across Nassau, Freeport and the Family Islands through
+            targeted email and SMS campaigns. No ad algorithms. No waiting. Pick your audience, launch
+            your campaign and measure the response.
           </p>
           <motion.div
             className="ke-hero-btns"
@@ -213,11 +217,11 @@ export default function HomePage() {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ delay: 0.35, duration: 0.5, ease: "easeOut" }}
         >
-          <div className="ke-hero-badge-num">70K+</div>
+          <div className="ke-hero-badge-num">30K+</div>
           <div className="ke-hero-badge-label">
-            Verified
+            Sendable
             <br />
-            Subscribers
+            Audience
           </div>
         </motion.div>
       </motion.section>
@@ -231,7 +235,7 @@ export default function HomePage() {
         <div className="ke-ticker-inner">
           <div className="ke-ticker-item">
             <span className="ke-ticker-dot" />
-            53% Avg Open Rate
+            25%+ Newsletter Open Rate
           </div>
           <div className="ke-ticker-item">
             <span className="ke-ticker-dot b" />
@@ -253,10 +257,9 @@ export default function HomePage() {
             <span className="ke-ticker-dot p" />
             Zero Invoice Friction
           </div>
-          {/* repeat for seamless loop */}
           <div className="ke-ticker-item">
             <span className="ke-ticker-dot" />
-            53% Avg Open Rate
+            25%+ Newsletter Open Rate
           </div>
           <div className="ke-ticker-item">
             <span className="ke-ticker-dot b" />
@@ -400,7 +403,7 @@ export default function HomePage() {
             >
               <div className="ke-metric-card">
                 <div className="ke-metric-val o">{metrics.openRateString}</div>
-                <div className="ke-metric-lbl">Avg Open Rate</div>
+                <div className="ke-metric-lbl">Paid Open Rate</div>
               </div>
               <div className="ke-metric-card">
                 <div className="ke-metric-val b">{metrics.clickRateString}</div>
@@ -415,6 +418,10 @@ export default function HomePage() {
                 <div className="ke-metric-lbl">Delivery Time</div>
               </div>
             </motion.div>
+            <p className="ke-est-note">
+              Paid campaigns typically open in the 24–35% range by industry. Kemis.email newsletters
+              typically open at 25%+.
+            </p>
             <button className="ke-est-cta" onClick={() => scrollToId("ke-pricing-section")}>
               Buy This Send →
             </button>
@@ -434,61 +441,118 @@ export default function HomePage() {
         <h2 className="ke-section-title">
           Pick Your
           <br />
-          Package.
+          Campaign.
         </h2>
         <div className="ke-pricing-grid">
-          {packages.map((pkg, index) => (
-            <motion.div
-              key={pkg.id}
-              className={`ke-price-card${pkg.featured ? " featured" : ""}`}
-              initial={{ opacity: 0, y: 30 + index * 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ delay: index * 0.1, duration: 0.5, ease: "easeOut" }}
-            >
-              {pkg.featured ? <div className="ke-price-badge">Best Value</div> : null}
-              <div className="ke-price-name">{pkg.name}</div>
-              <div className="ke-price-amount">{pkg.listPrice}</div>
-              <div className="ke-price-period">{pkg.period}</div>
-              <div className="ke-price-desc">{pkg.desc}</div>
-              <hr className="ke-price-divider" />
-              <ul className="ke-price-features">
-                {pkg.features.map((feature) => (
-                  <li key={feature} className="ke-price-feature">
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-              <div className="ke-price-actions">
-                <a
-                  className="ke-price-buy"
-                  href={pkg.cardUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Pay by card — {pkg.cardPrice} →
-                </a>
-                <a
-                  className="ke-price-bank"
-                  href={bankTransferWhatsAppUrl(pkg.name, pkg.listPrice)}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Bank transfer — {pkg.listPrice} · WhatsApp
-                </a>
-                <a
-                  className="ke-price-bank ke-price-bank-secondary"
-                  href={bankTransferMailtoUrl(pkg.name, pkg.listPrice)}
-                >
-                  Or email for banking details
-                </a>
+          <motion.div
+            className="ke-price-card"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+          >
+            <div className="ke-price-name">{EMAIL_CAMPAIGN.name}</div>
+            <div className="ke-price-amount">{EMAIL_CAMPAIGN.listPrice}</div>
+            <div className="ke-price-period">per campaign · 30K+ sendable audience</div>
+            <div className="ke-price-desc">
+              Broad reach to Bahamian consumers nationwide — or target by island and industry. You
+              supply artwork. We send.
+            </div>
+            <hr className="ke-price-divider" />
+            <ul className="ke-price-features">
+              <li className="ke-price-feature">You supply artwork &amp; copy</li>
+              <li className="ke-price-feature">Geo and industry targeting</li>
+              <li className="ke-price-feature">Delivery metrics after send</li>
+              <li className="ke-price-feature">Flash sales, announcements, promotions</li>
+            </ul>
+            <div className="ke-price-hotlist">
+              <div className="ke-price-hotlist-kicker">Or start smaller</div>
+              <div className="ke-price-hotlist-row">
+                <span className="ke-price-hotlist-name">Hot List</span>
+                <span className="ke-price-hotlist-price">{HOT_LIST.listPrice}</span>
               </div>
-              <div className="ke-price-tag">
-                {pkg.cardNote}. Card price includes online processing. Bank transfer is the list
-                price.
-              </div>
-            </motion.div>
-          ))}
+              <p>5,000–8,000 most engaged openers and clickers. Campaign design included.</p>
+              <BuyActions
+                name={HOT_LIST.name}
+                listPrice={HOT_LIST.listPrice}
+                cardPrice={HOT_LIST.cardPrice}
+                cardUrl={HOT_LIST.cardUrl}
+                cardCta={`Pay by card — ${HOT_LIST.cardPrice} Hot List →`}
+              />
+            </div>
+            <BuyActions
+              name={EMAIL_CAMPAIGN.name}
+              listPrice={EMAIL_CAMPAIGN.listPrice}
+              cardPrice={EMAIL_CAMPAIGN.cardPrice}
+              cardUrl={EMAIL_CAMPAIGN.cardUrl}
+            />
+            <div className="ke-price-tag">
+              Instant card checkout via Stripe. Card price includes online processing. Bank transfer is
+              the list price.
+            </div>
+          </motion.div>
+
+          <motion.div
+            className="ke-price-card"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ delay: 0.1, duration: 0.5, ease: "easeOut" }}
+          >
+            <div className="ke-price-name">Email + SMS Campaign</div>
+            <div className="ke-price-amount ke-price-amount-text">Quote</div>
+            <div className="ke-price-period">custom · higher-impact push</div>
+            <div className="ke-price-desc">
+              Inbox plus a branded tap on the phone. Email reaches 30K+ consumers; SMS is the
+              higher-impact add-on.
+            </div>
+            <hr className="ke-price-divider" />
+            <ul className="ke-price-features">
+              <li className="ke-price-feature">Email campaign to the sendable audience</li>
+              <li className="ke-price-feature">Branded SMS / WhatsApp — recipients see YOUR COMPANY</li>
+              <li className="ke-price-feature">From ~$0.10/send · minimum 10,000 numbers</li>
+              <li className="ke-price-feature">One brief. We run the send and report back.</li>
+            </ul>
+            <div className="ke-price-actions">
+              <Link className="ke-price-buy" href="/sms">
+                Request a quote →
+              </Link>
+            </div>
+            <div className="ke-price-tag">Quote-only. Pair SMS with an email campaign or run it on its own.</div>
+          </motion.div>
+
+          <motion.div
+            className="ke-price-card featured"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ delay: 0.2, duration: 0.5, ease: "easeOut" }}
+          >
+            <div className="ke-price-badge">Best for growth</div>
+            <div className="ke-price-name">{MONTHLY_PLAN.name}</div>
+            <div className="ke-price-amount">{MONTHLY_PLAN.listPrice}</div>
+            <div className="ke-price-period">4 campaigns / month</div>
+            <div className="ke-price-desc">
+              Recurring customer acquisition — stay in front of the same Bahamian audience every week.
+            </div>
+            <hr className="ke-price-divider" />
+            <ul className="ke-price-features">
+              <li className="ke-price-feature">Four email campaigns per month</li>
+              <li className="ke-price-feature">Priority scheduling</li>
+              <li className="ke-price-feature">Dedicated account manager</li>
+              <li className="ke-price-feature">Monthly strategy session</li>
+            </ul>
+            <BuyActions
+              name={MONTHLY_PLAN.name}
+              listPrice={MONTHLY_PLAN.listPrice}
+              cardPrice={MONTHLY_PLAN.cardPrice}
+              cardUrl={MONTHLY_PLAN.cardUrl}
+            />
+            <div className="ke-price-tag">
+              Instant card checkout via Stripe. Card price includes online processing. Bank transfer is
+              the list price.
+            </div>
+          </motion.div>
         </div>
       </motion.section>
 
@@ -664,7 +728,8 @@ export default function HomePage() {
             </div>
             <div className="ke-step-title">Buy Instantly</div>
             <p className="ke-step-desc">
-              Choose your package. Pay via Stripe in under 60 seconds. No invoice. No waiting for approval. Done.
+              Choose your package. Pay via Stripe in under 60 seconds. No invoice. No waiting for
+              approval. Done.
             </p>
           </motion.div>
           <motion.div
@@ -679,7 +744,8 @@ export default function HomePage() {
             </div>
             <div className="ke-step-title">Brief Your Send</div>
             <p className="ke-step-desc">
-              Submit your artwork and message, or let our team build your campaign. We handle everything.
+              Submit your artwork and message, or let our team build your campaign. We handle
+              everything.
             </p>
           </motion.div>
           <motion.div
@@ -694,7 +760,8 @@ export default function HomePage() {
             </div>
             <div className="ke-step-title">Results in 48hrs</div>
             <p className="ke-step-desc">
-              Your campaign hits 30,000+ inboxes. You get a live analytics report showing opens, clicks, and reach.
+              A full campaign hits the 30K+ nationwide sendable audience. You get a live analytics
+              report showing opens, clicks, and reach.
             </p>
           </motion.div>
         </div>
@@ -712,13 +779,13 @@ export default function HomePage() {
           <div>
             <div className="ke-section-label">SMS & WhatsApp</div>
             <h2 className="ke-section-title">
-              Your brand
+              Higher-impact
               <br />
               on their phone.
             </h2>
             <p className="ke-sms-promo-copy">
-              Bahamas enterprise messaging with branded sender names — from 10,000 to 1M+ numbers,
-              starting ~$0.10/send. Proven on 20,256 NHI deliveries at 100%.
+              Pair your email campaign with branded SMS. Inbox plus a tap on the shoulder — from
+              ~$0.10/send, minimum 10,000. Proven on 20,256 NHI deliveries at 100%.
             </p>
           </div>
           <a className="ke-btn-primary" href="/sms">
@@ -739,13 +806,13 @@ export default function HomePage() {
           <div>
             <div className="ke-section-label">Service Kit 2026</div>
             <h2 className="ke-section-title">
-              Hot List
+              Email + SMS
               <br />
-              highlights.
+              leave-behind.
             </h2>
             <p className="ke-kit-promo-copy">
-              See why $19.99 Hot List campaigns hit 5,000–8,000 of our most engaged buyers — then
-              download the full leave-behind PDF.
+              Reach 30K+ Bahamian consumers by email, with SMS for higher-impact campaigns — download
+              the Service Kit PDF for your team.
             </p>
           </div>
           <a className="ke-btn-primary" href="/service-kit">
@@ -779,9 +846,12 @@ export default function HomePage() {
         <h2>
           Ready to Reach
           <br />
-          <span>The Bahamas?</span>
+          <span>Bahamian Customers?</span>
         </h2>
-        <p>Join hundreds of local and international businesses already growing with KemisEMAIL.</p>
+        <p>
+          Reach 30K+ consumers through targeted email. SMS is available when you need a higher-impact
+          push.
+        </p>
         <motion.div
           className="ke-cta-btns"
           initial={{ opacity: 0, y: 20 }}
@@ -798,55 +868,15 @@ export default function HomePage() {
         </motion.div>
       </motion.section>
 
-      <footer className="ke-footer" aria-label="Site footer">
-        <div className="ke-footer-logo">
-          <svg
-            width="200"
-            height="44"
-            viewBox="0 0 200 44"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-label="KemisEMAIL"
-          >
-            <rect x="0" y="4" width="4" height="36" fill="#F5F4F0" />
-            <polygon points="4,4 18,4 10,22 4,22" fill="#FF4500" />
-            <polygon points="4,22 10,22 22,40 6,40" fill="#0047FF" />
-            <rect x="24" y="4" width="3" height="3" fill="#6200FF" />
-            <rect x="29" y="4" width="3" height="3" fill="#FF4500" opacity="0.5" />
-            <text
-              x="38"
-              y="32"
-              fontFamily="'Barlow Condensed',sans-serif"
-              fontWeight="900"
-              fontSize="30"
-              fill="#F5F4F0"
-              letterSpacing={-0.2}
-            >
-              KEMIS
-            </text>
-            <text
-              x="130"
-              y="32"
-              fontFamily="'Barlow Condensed',sans-serif"
-              fontWeight="900"
-              fontSize="30"
-              fill="#FF4500"
-              letterSpacing={-0.2}
-            >
-              EMAIL
-            </text>
-          </svg>
-        </div>
-        <div className="ke-footer-note">
-          A licensed subsidiary of Kemis Ltd., The Bahamas. © {new Date().getFullYear()} KemisEMAIL.
-        </div>
-        <div className="ke-footer-links">
-          <a href="/sms">SMS</a>
-          <a href="/contact">Contact</a>
-          <a href="/service-kit">Service Kit</a>
-          <a href="#">Kemis Group of Companies</a>
-        </div>
-      </footer>
+      <SiteFooter
+        links={
+          <>
+            <a href="/sms">SMS</a>
+            <a href="/contact">Contact</a>
+            <a href="/service-kit">Service Kit</a>
+          </>
+        }
+      />
     </div>
   );
 }
-

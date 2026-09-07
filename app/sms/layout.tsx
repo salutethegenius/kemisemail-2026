@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
-const title = "SMS & WhatsApp Advertising — Bahamas | KemisEMAIL";
+const title = "Email + SMS Campaigns — Bahamas | Kemis.email";
 const description =
-  "Enterprise SMS and WhatsApp advertising in The Bahamas. Branded sender name, 10,000 to 1M+ numbers, competitive rates from $0.10/send. Request a quote.";
+  "Pair branded SMS with email to reach Bahamian customers. Higher-impact campaigns with branded sender names from ~$0.10/send. Request a quote.";
 
 export const metadata: Metadata = {
   title,
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: "/og-kemisemail.png",
         width: 1200,
         height: 630,
-        alt: "KemisEMAIL — SMS & WhatsApp Advertising in The Bahamas",
+        alt: "Kemis.email — Email + SMS campaigns in The Bahamas",
       },
     ],
   },

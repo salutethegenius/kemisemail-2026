@@ -4,13 +4,14 @@ import { FormEvent, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import SiteNav from "@/components/SiteNav";
+import SiteFooter from "@/components/SiteFooter";
 import TurnstileWidget from "@/components/TurnstileWidget";
 
 type FormState = {
   name: string;
   email: string;
   phone: string;
-  topic: "Email advertising" | "SMS / WhatsApp" | "General";
+  topic: "Email advertising" | "Email + SMS" | "SMS / WhatsApp" | "General";
   message: string;
 };
 
@@ -21,47 +22,6 @@ const initialForm: FormState = {
   topic: "General",
   message: "",
 };
-
-function FooterLogo() {
-  return (
-    <svg
-      width="200"
-      height="44"
-      viewBox="0 0 200 44"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-label="KemisEMAIL"
-    >
-      <rect x="0" y="4" width="4" height="36" fill="#F5F4F0" />
-      <polygon points="4,4 18,4 10,22 4,22" fill="#FF4500" />
-      <polygon points="4,22 10,22 22,40 6,40" fill="#0047FF" />
-      <rect x="24" y="4" width="3" height="3" fill="#6200FF" opacity="0.9" />
-      <rect x="29" y="4" width="3" height="3" fill="#FF4500" opacity="0.5" />
-      <rect x="34" y="4" width="3" height="3" fill="#0047FF" opacity="0.3" />
-      <text
-        x="42"
-        y="32"
-        fontFamily="'Barlow Condensed',sans-serif"
-        fontWeight="900"
-        fontSize="30"
-        fill="#F5F4F0"
-        letterSpacing={-0.2}
-      >
-        KEMIS
-      </text>
-      <text
-        x="134"
-        y="32"
-        fontFamily="'Barlow Condensed',sans-serif"
-        fontWeight="900"
-        fontSize="30"
-        fill="#FF4500"
-        letterSpacing={-0.2}
-      >
-        EMAIL
-      </text>
-    </svg>
-  );
-}
 
 function scrollToId(id: string) {
   if (typeof document === "undefined") return;
@@ -134,8 +94,8 @@ export default function ContactPage() {
               the front desk.
             </h1>
             <p className="ke-sms-quote-lede">
-              Questions about email advertising or SMS & WhatsApp campaigns in The Bahamas? Send a
-              note — we’ll get back to you.
+              Reach 30K+ Bahamian consumers through targeted email, or add SMS for a higher-impact
+              campaign. Send a note — we’ll get back to you.
             </p>
           </div>
 
@@ -194,6 +154,7 @@ export default function ContactPage() {
                 >
                   <option value="General">General</option>
                   <option value="Email advertising">Email advertising</option>
+                  <option value="Email + SMS">Email + SMS</option>
                   <option value="SMS / WhatsApp">SMS / WhatsApp</option>
                 </select>
               </label>
@@ -229,20 +190,14 @@ export default function ContactPage() {
         </div>
       </motion.section>
 
-      <footer className="ke-footer" aria-label="Site footer">
-        <div className="ke-footer-logo">
-          <Link href="/">
-            <FooterLogo />
-          </Link>
-        </div>
-        <div className="ke-footer-note">
-          A licensed subsidiary of Kemis Ltd., The Bahamas. © {new Date().getFullYear()} KemisEMAIL.
-        </div>
-        <div className="ke-footer-links">
-          <Link href="/">Email</Link>
-          <Link href="/sms">SMS</Link>
-        </div>
-      </footer>
+      <SiteFooter
+        links={
+          <>
+            <Link href="/">Email</Link>
+            <Link href="/sms">SMS</Link>
+          </>
+        }
+      />
     </div>
   );
 }
