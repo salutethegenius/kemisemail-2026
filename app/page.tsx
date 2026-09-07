@@ -434,7 +434,7 @@ export default function HomePage() {
         id="ke-pricing-section"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: "some" }}
         transition={{ duration: 0.7, ease: "easeOut" }}
       >
         <div className="ke-section-label">Pricing — No Invoice. No Wait. Just Send.</div>
@@ -448,7 +448,7 @@ export default function HomePage() {
             className="ke-price-card"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true, amount: "some" }}
             transition={{ duration: 0.5, ease: "easeOut" }}
           >
             <div className="ke-price-name">{EMAIL_CAMPAIGN.name}</div>
@@ -496,7 +496,7 @@ export default function HomePage() {
             className="ke-price-card"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true, amount: "some" }}
             transition={{ delay: 0.1, duration: 0.5, ease: "easeOut" }}
           >
             <div className="ke-price-name">Email + SMS Campaign</div>
@@ -525,7 +525,7 @@ export default function HomePage() {
             className="ke-price-card featured"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true, amount: "some" }}
             transition={{ delay: 0.2, duration: 0.5, ease: "easeOut" }}
           >
             <div className="ke-price-badge">Best for growth</div>

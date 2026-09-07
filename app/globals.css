@@ -10,7 +10,7 @@
   font-family: "DM Sans", sans-serif;
   background: #f5f4f0;
   color: #0a0a0a;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .ke-nav {
@@ -1836,8 +1836,7 @@ a.ke-btn-outline-white {
   }
 
   .ke-nav-cta {
-    padding: 10px 14px;
-    font-size: 13px;
+    display: none;
   }
 
   .ke-menu-panel {
@@ -1899,6 +1898,10 @@ a.ke-btn-outline-white {
   }
 
   .ke-estimator {
+    padding: 50px 20px;
+  }
+
+  .ke-pricing {
     padding: 50px 20px;
   }
 
